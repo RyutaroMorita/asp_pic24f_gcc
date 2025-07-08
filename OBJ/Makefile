@@ -60,7 +60,8 @@ EXTRACT_START_ADDRESS = 0x00000206
 #
 SRCLANG = c
 ifeq ($(SRCLANG),c)
-  LIBS = -lc -lm
+#  LIBS = -lc -lm
+  LIBS = -lm
 endif
 ifeq ($(SRCLANG),c++)
   USE_CXX = true

@@ -16,7 +16,8 @@ PRCDIR = $(SRCDIR)/arch/$(PRC)_$(TOOL)
 #  コンパイルオプション
 #
 COPTS := $(COPTS) -mcpu=24FJ1024GB610 -fomit-frame-pointer
-LDFLAGS := $(LDFLAGS) -no-legacy-libc
+#LDFLAGS := $(LDFLAGS) -no-legacy-libc
+LDFLAGS := $(LDFLAGS)
 
 #
 #  カーネルに関する定義

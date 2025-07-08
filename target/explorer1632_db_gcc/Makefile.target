@@ -82,8 +82,10 @@ $(START_OBJS:.o=.d): %.d: %.S
 
 #LDFLAGS := -nostdlib $(LDFLAGS)
 #CFG1_OUT_LDFLAGS := -nostdlib $(CFG1_OUT_LDFLAGS)
-CFG1_OUT_LDFLAGS := -no-legacy-libc \
-					-Wl,--local-stack,--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--stack=16,--check-sections,--data-init,--pack-data,--handles,--no-isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map=cfg1_out.map \
+#CFG1_OUT_LDFLAGS := -no-legacy-libc \
+#					-Wl,--local-stack,--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--stack=16,--check-sections,--data-init,--pack-data,--handles,--no-isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map=cfg1_out.map \
+#					$(CFG1_OUT_LDFLAGS)
+CFG1_OUT_LDFLAGS := -Wl,--local-stack,--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--stack=16,--check-sections,--data-init,--pack-data,--handles,--no-isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map=cfg1_out.map \
 					$(CFG1_OUT_LDFLAGS)
 LIBS := $(LIBS)
 
