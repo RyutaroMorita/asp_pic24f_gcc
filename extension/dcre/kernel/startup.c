@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2010 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  @(#) $Id: startup.c 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		カーネルの初期化と終了処理
+ *		�J�[�l���̏������ƏI������
  */
 
 #include "kernel_impl.h"
@@ -49,7 +49,7 @@
 #include <sil.h>
 
 /*
- *  トレースログマクロのデフォルト定義
+ *  �g���[�X���O�}�N���̃f�t�H���g��`
  */
 #ifndef LOG_KER_ENTER
 #define LOG_KER_ENTER()
@@ -70,41 +70,41 @@
 #ifdef TOPPERS_sta_ker
 
 /*
- *  カーネル動作状態フラグ
+ *  �J�[�l�������ԃt���O
  *
- *  スタートアップルーチンで，false（＝0）に初期化されることを期待して
- *  いる．
+ *  �X�^�[�g�A�b�v���[�`���ŁCfalse�i��0�j�ɏ���������邱�Ƃ����҂���
+ *  ����D
  */
 bool_t	kerflg = false;
 
 /*
- *  カーネルの起動
+ *  �J�[�l���̋N��
  */
 void
 sta_ker(void)
 {
 	/*
-	 *  ターゲット依存の初期化
+	 *  �^�[�Q�b�g�ˑ��̏�����
 	 */
 	target_initialize();
 
 	/*
-	 *  各モジュールの初期化
+	 *  �e���W���[���̏�����
 	 *
-	 *  タイムイベント管理モジュールは他のモジュールより先に初期化
-	 *  する必要がある．
+	 *  �^�C���C�x���g�Ǘ����W���[���͑��̃��W���[������ɏ�����
+	 *  ����K�v������D
 	 */
 	initialize_kmm();
 	initialize_tmevt();
 	initialize_object();
 
 	/*
-	 *  初期化ルーチンの実行
+	 *  ���������[�`���̎��s
 	 */ 
 	call_inirtn();
 
 	/*
-	 *  カーネル動作の開始
+	 *  �J�[�l������̊J�n
 	 */
 	kerflg = true;
 	LOG_KER_ENTER();
@@ -115,7 +115,7 @@ sta_ker(void)
 #endif /* TOPPERS_sta_ker */
 
 /*
- *  カーネルの終了
+ *  �J�[�l���̏I��
  */
 #ifdef TOPPERS_ext_ker
 
@@ -127,25 +127,25 @@ ext_ker(void)
 	LOG_EXT_KER_ENTER();
 
 	/*
-	 *  割込みロック状態に移行
+	 *  �����݃��b�N��ԂɈڍs
 	 */
 	SIL_LOC_INT();
 
 	/*
-	 *  カーネル動作の終了
+	 *  �J�[�l������̏I��
 	 */
 	LOG_KER_LEAVE();
 	kerflg = false;
 
 	/*
-	 *  カーネルの終了処理の呼出し
+	 *  �J�[�l���̏I�������̌ďo��
 	 *
-	 *  非タスクコンテキストに切り換えて，exit_kernelを呼び出す．
+	 *  ��^�X�N�R���e�L�X�g�ɐ؂芷���āCexit_kernel���Ăяo���D
 	 */
 	call_exit_kernel();
 
 	/*
-	 *  コンパイラの警告対策（ここへ来ることはないはず）
+	 *  �R���p�C���̌x���΍�i�����֗��邱�Ƃ͂Ȃ��͂��j
 	 */
 	SIL_UNL_INT();
 	LOG_EXT_KER_LEAVE(E_SYS);
@@ -153,18 +153,18 @@ ext_ker(void)
 }
 
 /*
- *  カーネルの終了処理
+ *  �J�[�l���̏I������
  */
 void
 exit_kernel(void)
 {
 	/*
-	 *  終了処理ルーチンの実行
+	 *  �I���������[�`���̎��s
 	 */
 	call_terrtn();
 
 	/*
-	 *  ターゲット依存の終了処理
+	 *  �^�[�Q�b�g�ˑ��̏I������
 	 */
 	target_exit();
 	assert(0);
@@ -173,10 +173,10 @@ exit_kernel(void)
 #endif /* TOPPERS_ext_ker */
 
 /*
- *  カーネルの割り付けるメモリ領域の管理
+ *  �J�[�l���̊���t���郁�����̈�̊Ǘ�
  *
- *  メモリ領域を先頭から順に割り当て，解放されたメモリ領域を再利用しな
- *  いメモリ管理モジュール．
+ *  �������̈��擪���珇�Ɋ��蓖�āC������ꂽ�������̈���ė��p����
+ *  ���������Ǘ����W���[���D
  */
 #ifdef TOPPERS_kermem
 #ifndef OMIT_KMM_ALLOCONLY

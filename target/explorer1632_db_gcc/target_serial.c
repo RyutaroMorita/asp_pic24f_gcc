@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_serial.c 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -47,8 +47,6 @@
 #include <kernel.h>
 #include <t_syslog.h>
 #include "target_syssvc.h"
-//#include "dve68k.h"
-//#include "pdic/upd72001/upd72001.h"
 #include "target_serial.h"
 #include "xc.h"
 #include "mcc_generated_files/uart1.h"
@@ -67,9 +65,9 @@ extern void U1ErrInterrupt();
  *  シリアルポートの管理ブロック
  */
 struct sio_port_control_block {
-    ID port;
-    uint16_t reg;
-    intptr_t exinf;
+	ID port;
+	uint16_t reg;
+	intptr_t exinf;
 };
 
 /*

@@ -15,17 +15,17 @@ int ch2num(char ch1,char ch2)
 
 int main(int argc, char *argv[])
 {
-	char		*p;
-	char		buf[255];
-	long		start;
-	FILE		*fpIn, *fpOut;
-	long		forge;
-	long		search;
-	int		mode;
-	long		address;
-	long		detect = 0;
-	int		size;
-	int		i;
+	char *p;
+	char buf[255];
+	long start;
+	FILE *fpIn, *fpOut;
+	long forge;
+	long search;
+	int mode;
+	long address;
+	long detect = 0;
+	int size;
+	int i;
 
 	if (argc != 4)
 		goto error;

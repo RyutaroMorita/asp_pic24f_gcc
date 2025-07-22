@@ -35,7 +35,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_timer.c 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -62,7 +62,6 @@ target_timer_initialize(intptr_t exinf)
 	 *  タイマ周期を設定し，タイマの動作を開始する．
 	 */
 	assert(cyc <= MAX_CLOCK);
-//	dga_write((void *) TADR_DGA_CSR12, CSR12_START | cyc);
 	TMR1_Start();
 
 	/*
@@ -80,7 +79,6 @@ target_timer_terminate(intptr_t exinf)
 	/*
 	 *  タイマの動作を停止する．
 	 */
-//	dga_write((void *) TADR_DGA_CSR12, CSR12_STOP);
 	TMR1_Stop();
 }
 

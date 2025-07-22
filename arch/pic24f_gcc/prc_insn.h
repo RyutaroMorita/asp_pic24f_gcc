@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: prc_insn.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -53,9 +53,7 @@
 Inline uint16_t
 current_sr(void)
 {
-	uint16_t	sr;
-
-	//Asm("move.w %%sr, %0" : "=g"(sr));
+	uint16_t sr;
 	Asm("mov _SR, %0" : "=g"(sr));
 	return(sr);
 }
@@ -66,7 +64,6 @@ current_sr(void)
 Inline void
 set_sr(uint16_t sr)
 {
-//	Asm("move.w %0, %%sr" : : "g"(sr) : "cc");
 	Asm("mov %0, w0" : : "g"(sr) : "w0");
 	Asm("mov w0, _SR": : : "memory", "cc");
 }
@@ -80,7 +77,6 @@ set_sr(uint16_t sr)
 Inline void
 disint(void)
 {
-//	Asm("or.w #0x0700, %sr");
 	Asm("mov _SR, w0" : : : "w0");
 	Asm("mov #0x00E0, w1" : : : "w1");
 	Asm("ior w0, w1, w0" : : :);
@@ -96,7 +92,6 @@ disint(void)
 Inline void
 enaint(void)
 {
-//	Asm("and.w #~0x0700, %sr");
 	Asm("mov _SR, w0" : : : "w0");
 	Asm("mov #~0x00E0, w1" : : : "w1");
 	Asm("and w0, w1, w0" : : :);
@@ -109,8 +104,7 @@ enaint(void)
 Inline void
 *current_vbr(void)
 {
-	void	*vbr;
-
+	void *vbr;
 	Asm("movec.l %%vbr, %0" : "=r"(vbr));
 	return(vbr);
 }
@@ -123,25 +117,5 @@ set_vbr(void *vbr)
 {
 	Asm("movec.l %0, %%vbr" : : "r"(vbr));
 }
-
-/*
- *  レディキューサーチのためのビットマップサーチ関数
- *
- *  bfffo命令は最上位ビットからサーチするため，最上位ビットを最高優先度
- *  に対応させる．
- */
-//#define	OMIT_BITMAP_SEARCH
-//#define	PRIMAP_BIT(pri)		(0x8000U >> (pri))
-
-#if 0
-Inline uint_t
-bitmap_search(uint16_t bitmap)
-{
-	uint32_t	offset;
-
-	Asm("bfffo %1{16,16}, %0" : "=d"(offset) : "d"((uint32_t) bitmap));
-	return((uint_t)(offset - 16));
-}
-#endif
 
 #endif /* TOPPERS_PRC_INSN_H */

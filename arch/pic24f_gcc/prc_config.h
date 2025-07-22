@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  $Id: prc_config.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -59,11 +59,6 @@
 #include "prc_insn.h"
 
 /*
- *  非タスクコンテキスト用のスタック初期値
- */
-//#define TOPPERS_ISTKPT(istk, istksz) ((STK_T *)((uint8_t *)(istk)))
-
-/*
  *  タスクコンテキストブロックの定義
  */
 typedef struct task_context_block {
@@ -75,14 +70,6 @@ typedef struct task_context_block {
 
 /*
  *  割込み優先度マスク操作ライブラリ
- *
- *  M68040では，ステータスレジスタ（SR）の下から8～10ビットめの3ビット
- *  に割込み優先度マスク（ハードウェアの割込み優先度マスク，IPM）が置か
- *  れている．IPMを保存しておくために，割込み優先度の外部表現（-1から連
- *  続した負の値）を使うことも可能であるが，余計な左右ビットシフトと符
- *  号反転が必要になる．これを避けるために，IPMを保存する場合には，SRの
- *  8～10ビットめを取り出した値を使うことにする．この値を割込み優先度マ
- *  スクの内部表現と呼び，IIPMと書くことにする．
  */
 
 /*
@@ -112,35 +99,7 @@ set_iipm(uint16_t iipm)
 }
 
 /*
- *  TOPPERS標準割込み処理モデルの実現
- *
- *  M68040は，ステータスレジスタ（SR）中に割込み優先度マスク（ハードウェ
- *  アの割込み優先度マスク，IPM）を持っているが，CPUロックフラグに相当
- *  する機能を持たない．そのため，CPUロックフラグの機能を，IPMによって
- *  実現する．
- *
- *  まずCPUロックフラグの値（すなわち，CPUロック状態かCPUロック解除状態
- *  か）は，そのための変数（lock_flag）を用意して保持する．
- *
- *  CPUロックフラグがクリアされている間（すなわち，CPUロック解除状態の
- *  間）は，IPM（ハードウェアの割込み優先度マスク）を，モデル上の割込み
- *  優先度マスクの値に設定する．この間は，モデル上の割込み優先度マスク
- *  は，IPMを用いて保持する．
- *
- *  それに対してCPUロックフラグがセットされている間（すなわち，CPUロッ
- *  ク状態の間）は，IPM（ハードウェアの割込み優先度マスク）を，カーネル
- *  管理の割込みをすべてマスクする値（TIPM_LOCK）と，モデル上の割込み優
- *  先度マスクとの高い方に設定する．この間のモデル上の割込み優先度マス
- *  クは，そのための変数（saved_iipm，内部表現で保持）を用意して保持す
- *  る．
- */
-
-/*
  *  コンテキストの参照
- *
- *  M68040では，タスクコンテキストをマスタモードで，非タスクコンテキス
- *  トを割込みモードで実行する．マスタモードか割込みモードかは，ステー
- *  タスレジスタ（SR）中の割込みモードビットにより判別できる．
  */
 extern volatile int		int_cnt;
 Inline bool_t
@@ -155,21 +114,12 @@ sense_context(void)
  *  CPUロック状態での割込み優先度マスク
  *
  *  TIPM_LOCKは，カーネル管理の割込みをすべてマスクする値に定義する．
- *
- *  TIPM_LOCKは，基本的にはTMIN_INTPRIに一致させればよいが，M68040では，
- *  IPM（ハードウェアの割込み優先度マスク）が-6の場合と-7の場合の振舞い
- *  が同じで，IPMに-7を設定することは効率的に行えることから，
- *  TMIN_INTPRIが-6の時はTIPM_LOCKを-7にしている．
  */
-//#if TMIN_INTPRI == -6		/* NMI以外にカーネル管理外の割込みを設けない */
-//#define TIPM_LOCK		(-7)
-//#else /* TMIN_INTPRI == -6 */
 #if (-1 >= TMIN_INTPRI) && (TMIN_INTPRI >= -7)
 #define TIPM_LOCK		TMIN_INTPRI
-#else /* (-1 >= TMIN_INTPRI) && (TMIN_INTPRI > -6) */
+#else /* (-1 >= TMIN_INTPRI) && (TMIN_INTPRI >= -7) */
 #error TMIN_INTPRI out of range.
-#endif /* (-1 >= TMIN_INTPRI) && (TMIN_INTPRI > -6) */
-//#endif /* TMIN_INTPRI == -6 */
+#endif /* (-1 >= TMIN_INTPRI) && (TMIN_INTPRI >= -7) */
 
 /*
  *  CPUロック状態での割込み優先度マスクの内部表現
@@ -218,13 +168,9 @@ x_lock_cpu(void)
 	 *  ある．
 	 */
 	iipm = current_iipm();
-//#if TIPM_LOCK == -7
-//	disint();
-//#else /* TIPM_LOCK == -7 */
 	if (IIPM_LOCK > iipm) {
 		set_iipm(IIPM_LOCK);
 	}
-//#endif /* TIPM_LOCK == -7 */
 	saved_iipm = iipm;
 	lock_flag = true;
 	Asm("":::"memory");
@@ -292,14 +238,7 @@ x_set_ipm(PRI intpri)
 	}
 	else {
 		saved_iipm = iipm;
-//#if TIPM_LOCK == -7
-		/*
-		 *  TIPM_LOCKが-7の場合には，この時点でハードウェアの割込み優先
-		 *  度マスクが必ず7に設定されているため，設定しなおす必要がない．
-		 */
-//#else /* TIPM_LOCK == -7 */
 		set_iipm(iipm > IIPM_LOCK ? iipm : IIPM_LOCK);
-//#endif /* TIPM_LOCK == -7 */
 	}
 }
 
@@ -412,22 +351,7 @@ typedef struct exc_vector_entry {
 Inline void
 x_define_inh(INHNO inhno, FP int_entry)
 {
-#if 0
-	EXCVE	*excvt;
-
-	assert(VALID_INHNO_DEFINH(inhno));
-
-#ifdef EXCVT_KERNEL
-	/*
-	 *  EXCVT_KERNELが定義されている時は，初期化処理の中でVBRを
-	 *  EXCVT_KERNELに設定するので，EXCVT_KERNELを使う．
-	 */
-	excvt = (EXCVE *) EXCVT_KERNEL;
-#else /* EXCVT_KERNEL */
-	excvt = (EXCVE *) current_vbr();
-#endif /* EXCVT_KERNEL */
-	excvt[inhno].exc_handler = int_entry;
-#endif
+	//
 }
 
 /*
@@ -439,22 +363,7 @@ x_define_inh(INHNO inhno, FP int_entry)
 Inline void
 x_define_exc(EXCNO excno, FP exc_entry)
 {
-#if 0
-	EXCVE	*excvt;
-
-	assert(VALID_EXCNO_DEFEXC(excno));
-
-#ifdef EXCVT_KERNEL
-	/*
-	 *  EXCVT_KERNELが定義されている時は，初期化処理の中でVBRを
-	 *  EXCVT_KERNELに設定するので，EXCVT_KERNELを使う．
-	 */
-	excvt = (EXCVE *) EXCVT_KERNEL;
-#else /* EXCVT_KERNEL */
-	excvt = (EXCVE *) current_vbr();
-#endif /* EXCVT_KERNEL */
-	excvt[excno].exc_handler = exc_entry;
-#endif
+	//
 }
 
 /*
@@ -464,7 +373,6 @@ x_define_exc(EXCNO excno, FP exc_entry)
 /*
  *  割込みハンドラの出入口処理のラベルを作るマクロ
  */
-//#define INT_ENTRY(inhno, inthdr)	_kernel_##inthdr##_##inhno
 #define INT_ENTRY(inhno, inthdr)    inthdr
 
 /*
@@ -472,44 +380,7 @@ x_define_exc(EXCNO excno, FP exc_entry)
  *  inhno_numをパラメータとしてlog_inh_enterを呼び出すアセンブリ言語コー
  *  ドにマクロ定義する．
  */
-#ifdef LOG_INH_ENTER
-
-#define CALL_LOG_INH_ENTER(inhno_num) \
-"	move.l #" #inhno_num ", -(%sp)	\n"  /* inhno_numをパラメータに */ \
-"	jsr _kernel_log_inh_enter		\n"  /* log_inh_enterを呼び出す */ \
-"	addq.l #4, %sp					\n"
-
-#else /* LOG_INH_ENTER */
 #define CALL_LOG_INH_ENTER(inhno_num)
-#endif /* LOG_INH_ENTER */
-
-#ifdef LOG_INH_LEAVE
-
-/*
- *  CALL_LOG_INH_LEAVEを，inhno_numをパラメータとしてlog_inh_leaveを呼
- *  び出すアセンブリ言語コードにマクロ定義する．
- */
-#define CALL_LOG_INH_LEAVE(inhno_num) \
-"	move.l #" #inhno_num ", -(%sp)	\n"  /* inhno_numをパラメータに */ \
-"	jsr _kernel_log_inh_leave		\n"  /* log_inh_leaveを呼び出す */ \
-"	addq.l #4, %sp					\n"
-
-/*
- *  LOG_INH_LEAVEがマクロ定義されている場合の割込みハンドラの出入口処理．
- *  割込みハンドラをサブルーチンコールし，戻ってきたら，トレースログの
- *  取得後，ret_intに分岐する．
- */
-#define INTHDR_ENTRY(inhno, inhno_num, inthdr) \
-extern void _kernel_##inthdr##_##inhno(void); \
-asm(".text							\n" \
-"_kernel_" #inthdr "_" #inhno ":	\n" \
-"	movem.l %d0-%d1/%a0-%a1, -(%sp)	\n"  /* スクラッチレジスタを保存 */ \
-	CALL_LOG_INH_ENTER(inhno_num) \
-"	jsr " #inthdr "					\n"  /* 割込みハンドラを呼び出す */ \
-	CALL_LOG_INH_LEAVE(inhno_num) \
-"	jmp _kernel_ret_int				\n");/* ret_intへ分岐 */
-
-#else /* LOG_INH_LEAVE */
 
 /*
  *  LOG_INH_LEAVEがマクロ定義されていない場合の割込みハンドラの出入口処
@@ -518,45 +389,6 @@ asm(".text							\n" \
  *  る．
  */
 #define INTHDR_ENTRY(inhno, inhno_num, inthdr) extern void inthdr(void);
-#if 0
-#define INTHDR_ENTRY(inhno, inhno_num, inthdr) \
-extern void _kernel_##inthdr##_##inhno(void); \
-asm(".text							\n" \
-"_kernel_" #inthdr "_" #inhno ":	\n" \
-"	movem.l %d0-%d1/%a0-%a1, -(%sp)	\n"  /* スクラッチレジスタを保存 */ \
-	CALL_LOG_INH_ENTER(inhno_num) \
-"	move.l #_kernel_ret_int, -(%sp)	\n"  /* 戻り番地をスタックに積む */ \
-"	jmp " #inthdr "					\n");/* 割込みハンドラへ分岐 */
-
-#endif
-#endif /* LOG_INH_LEAVE */
-
-/*
- *  CPU例外ハンドラの出入口処理の生成
- *
- *  CPU例外ハンドラの番地をA1に，CPU例外ハンドラ番号をD1に入れて，
- *  exchdr_entryに分岐する．割込みハンドラの出入口処理と同様に，CPU例外
- *  ハンドラ毎にCPU例外ハンドラを呼び出す処理を展開する方法もあるが，展
- *  開する処理内容が複雑であるため，採用していない．
- */
-
-/*
- *  CPU例外ハンドラの出入口処理のラベルを作るマクロ
- */
-//#define EXC_ENTRY(excno, exchdr)	_kernel_##exchdr##_##excno
-#define EXC_ENTRY(excno, exchdr)    exchdr
-
-/*
- *  CPU例外ハンドラの出入口処理
- */
-#define EXCHDR_ENTRY(excno, excno_num, exchdr) \
-extern void _kernel_##exchdr##_##excno(void *sp); \
-asm(".text							\n" \
-"_kernel_" #exchdr "_" #excno ":	\n" \
-"	movem.l %d0-%d1/%a0-%a1, -(%sp)	\n"  /* スクラッチレジスタを保存 */ \
-"	lea.l " #exchdr ", %a1			\n"  /* CPU例外ハンドラの番地をA1に */ \
-"	move.l #" #excno_num ", %d1		\n"  /* excno_numをD1に */ \
-"	jmp _kernel_exchdr_entry		\n");/* exchdr_entryに分岐 */
 
 /*
  *  CPU例外の発生した時のコンテキストの参照
@@ -588,13 +420,6 @@ exc_get_iipm(void *p_excinf)
  *  込み優先度マスク全解除状態である時にtrue，そうでない時にfalseを返す
  *  （CPU例外がカーネル管理外の割込み処理中で発生した場合にもfalseを返
  *  す）．
- *
- *  M68040では，CPU例外の発生した時のIPM（ハードウェアの割込み優先度マ
- *  スク）がすべての割込みを許可する状態であることをチェックすることで，
- *  カーネル実行中でないこと，全割込みロック状態でないこと，CPUロック状
- *  態でないこと，割込み優先度マスク全解除状態であることの4つの条件を
- *  チェックすることができる（CPU例外が発生した時のlock_flagを参照する
- *  必要はない）．
  */
 Inline bool_t
 exc_sense_intmask(void *p_excinf)

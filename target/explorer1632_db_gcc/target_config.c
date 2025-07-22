@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_config.c 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -46,7 +46,6 @@
 
 #include "kernel_impl.h"
 #include <sil.h>
-//#include <xc.h>
 #include "mcc_generated_files/system.h"
 
 /*
@@ -114,11 +113,9 @@ target_fput_log(char c)
 void
 x_config_int(INTNO intno, ATR intatr, PRI intpri)
 {
-//	uint32_t	bitpat = DGA_INT_BITPAT(intno);
 	uint16_t	*ipc;
 
 	assert(VALID_INTNO_CFGINT(intno));
-//	assert(TIRQ_NMI <= intpri && intpri <= TIRQ_LEVEL1);
 	assert(TMIN_INTPRI <= intpri && intpri <= TMAX_INTPRI);
 
 	/*
@@ -157,22 +154,13 @@ x_disable_int(INTNO intno)
 {
 	uint16_t	*iec;
 	uint16_t	flg;
-	if (intno > 117)
+	if (intno > TMAX_INTNO)
 		return false;
 	iec = (uint16_t *)&IEC0bits;
 	iec += (intno / 16);
 	flg = 1 << (intno % 16);
 	*iec &= ~flg;
 	return true;
-#if 0
-	uint32_t	bitpat = DGA_INT_BITPAT(intno);
-
-	if ((bitpat_cfgint & bitpat) == 0U) {
-		return(false);
-	}
-	dga_bit_and((void *) TADR_DGA_CSR21, ~bitpat);
-	return(true);
-#endif
 }
 
 /*
@@ -186,22 +174,13 @@ x_enable_int(INTNO intno)
 {
 	uint16_t	*iec;
 	uint16_t	flg;
-	if (intno > 117)
+	if (intno > TMAX_INTNO)
 		return false;
 	iec = (uint16_t *)&IEC0bits;
 	iec += (intno / 16);
 	flg = 1 << (intno % 16);
 	*iec |= flg;
 	return true;
-#if 0
-	uint32_t	bitpat = DGA_INT_BITPAT(intno);
-
-	if ((bitpat_cfgint & bitpat) == 0U) {
-		return(false);
-	}
-	dga_bit_or((void *) TADR_DGA_CSR21, bitpat);
-	return(true);
-#endif
 }
 
 /*
@@ -212,13 +191,12 @@ x_clear_int(INTNO intno)
 {
 	uint16_t	*ifs;
 	uint16_t	flg;
-	if (intno > 117)
+	if (intno > TMAX_INTNO)
 		return;
 	ifs = (uint16_t *)&IFS0bits;
 	ifs += (intno / 16);
 	flg = 1 << (intno % 16);
 	*ifs &= ~flg;
-//	dga_write((void *) TADR_DGA_CSR23, DGA_INT_BITPAT(intno));
 }
 
 /*
@@ -229,11 +207,10 @@ x_probe_int(INTNO intno)
 {
 	uint16_t	*ifs;
 	uint16_t	flg;
-	if (intno > 117)
+	if (intno > TMAX_INTNO)
 		return false;
 	ifs = (uint16_t *)&IFS0bits;
 	ifs += (intno / 16);
 	flg = 1 << (intno % 16);
 	return (*ifs & flg);
-//	return((dga_read((void *) TADR_DGA_CSR20) & DGA_INT_BITPAT(intno)) != 0U);
 }

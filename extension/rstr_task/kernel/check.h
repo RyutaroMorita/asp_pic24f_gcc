@@ -8,47 +8,47 @@
  *  Copyright (C) 2005-2011 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  $Id: check.h 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		エラーチェック用マクロ
+ *		�G���[�`�F�b�N�p�}�N��
  */
 
 #ifndef TOPPERS_CHECK_H
 #define TOPPERS_CHECK_H
 
 /*
- *  優先度の範囲の判定
+ *  �D��x�͈̔͂̔���
  */
 #define VALID_TPRI(tpri)	(TMIN_TPRI <= (tpri) && (tpri) <= TMAX_TPRI)
 
@@ -58,7 +58,7 @@
 #endif /* VALID_INTPRI_CHGIPM */
 
 /*
- *  タスク優先度のチェック（E_PAR）
+ *  �^�X�N�D��x�̃`�F�b�N�iE_PAR�j
  */
 #define CHECK_TPRI(tpri) do {								\
 	if (!VALID_TPRI(tpri)) {								\
@@ -82,7 +82,7 @@
 } while (false)
 
 /*
- *  タイムアウト指定値のチェック（E_PAR）
+ *  �^�C���A�E�g�w��l�̃`�F�b�N�iE_PAR�j
  */
 #define CHECK_TMOUT(tmout) do {								\
 	if (!(TMO_FEVR <= (tmout))) {							\
@@ -92,7 +92,7 @@
 } while (false)
 
 /*
- *  割込み優先度のチェック（E_PAR）
+ *  �����ݗD��x�̃`�F�b�N�iE_PAR�j
  */
 #define CHECK_INTPRI_CHGIPM(intpri) do {					\
 	if (!VALID_INTPRI_CHGIPM(intpri)) {						\
@@ -102,7 +102,7 @@
 } while (false)
 
 /*
- *  割込み番号のチェック（E_PAR）
+ *  �����ݔԍ��̃`�F�b�N�iE_PAR�j
  */
 #define CHECK_INTNO_DISINT(intno) do {						\
 	if (!VALID_INTNO_DISINT(intno)) {						\
@@ -112,7 +112,7 @@
 } while (false)
 
 /*
- *  その他のパラメータエラーのチェック（E_PAR）
+ *  ���̑��̃p�����[�^�G���[�̃`�F�b�N�iE_PAR�j
  */
 #define CHECK_PAR(exp) do {									\
 	if (!(exp)) {											\
@@ -122,7 +122,7 @@
 } while (false)
 
 /*
- *  オブジェクトIDの範囲の判定
+ *  �I�u�W�F�N�gID�͈̔͂̔���
  */
 #define VALID_TSKID(tskid)	(TMIN_TSKID <= (tskid) && (tskid) <= tmax_tskid)
 #define VALID_SEMID(semid)	(TMIN_SEMID <= (semid) && (semid) <= tmax_semid)
@@ -135,7 +135,7 @@
 #define VALID_ALMID(almid)	(TMIN_ALMID <= (almid) && (almid) <= tmax_almid)
 
 /*
- *  オブジェクトIDのチェック（E_ID）
+ *  �I�u�W�F�N�gID�̃`�F�b�N�iE_ID�j
  */
 #define CHECK_TSKID(tskid) do {								\
 	if (!VALID_TSKID(tskid)) {								\
@@ -208,7 +208,7 @@
 } while (false)
 
 /*
- *  呼出しコンテキストのチェック（E_CTX）
+ *  �ďo���R���e�L�X�g�̃`�F�b�N�iE_CTX�j
  */
 #define CHECK_TSKCTX() do {									\
 	if (sense_context()) {									\
@@ -225,7 +225,7 @@
 } while (false)
 
 /*
- *  呼出しコンテキストとCPUロック状態のチェック（E_CTX）
+ *  �ďo���R���e�L�X�g��CPU���b�N��Ԃ̃`�F�b�N�iE_CTX�j
  */
 #define CHECK_TSKCTX_UNL() do {								\
 	if (sense_context() || t_sense_lock()) {				\
@@ -242,8 +242,8 @@
 } while (false)
 
 /*
- *  ディスパッチ保留状態でないかのチェック（E_CTX）
- *  自タスクが制約タスクでないかのチェック（E_NOSPT）
+ *  �f�B�X�p�b�`�ۗ���ԂłȂ����̃`�F�b�N�iE_CTX�j
+ *  ���^�X�N������^�X�N�łȂ����̃`�F�b�N�iE_NOSPT�j
  */
 #define CHECK_DISPATCH() do {								\
 	if (sense_context() || t_sense_lock() || !dspflg) {		\
@@ -257,7 +257,7 @@
 } while (false)
 
 /*
- *  対象タスクが制約タスクでないかのチェック（E_NOSPT）
+ *  �Ώۃ^�X�N������^�X�N�łȂ����̃`�F�b�N�iE_NOSPT�j
  */
 #define CHECK_NONRSTR(p_tcb) do {							\
 	if (((p_tcb)->p_tinib->tskatr & TA_RSTR) != 0U) {		\
@@ -267,7 +267,7 @@
 } while (false)
 
 /*
- *  その他のコンテキストエラーのチェック（E_CTX）
+ *  ���̑��̃R���e�L�X�g�G���[�̃`�F�b�N�iE_CTX�j
  */
 #define CHECK_CTX(exp) do {									\
 	if (!(exp)) {											\
@@ -277,7 +277,7 @@
 } while (false)
 
 /*
- *  自タスクを指定していないかのチェック（E_ILUSE）
+ *  ���^�X�N���w�肵�Ă��Ȃ����̃`�F�b�N�iE_ILUSE�j
  */
 #define CHECK_NONSELF(p_tcb) do {							\
 	if ((p_tcb) == p_runtsk) {								\
@@ -287,7 +287,7 @@
 } while (false)
 
 /*
- *  その他の不正使用エラーのチェック（E_ILUSE）
+ *  ���̑��̕s���g�p�G���[�̃`�F�b�N�iE_ILUSE�j
  */
 #define CHECK_ILUSE(exp) do {								\
 	if (!(exp)) {											\

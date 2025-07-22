@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_config.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -51,9 +51,9 @@
 #define TOPPERS_TARGET_CONFIG_H
 
 /*
- *  ターゲットシステムのハードウェア資源の定義
+ *  割込み数
  */
-//#include "dve68k.h"
+#define TMAX_INTNO	117U
 
 /*
  *  ターゲット定義のオブジェクト属性
@@ -104,29 +104,11 @@ extern void		*board_addr;	/* ローカルメモリの先頭アドレス */
 
 /*
  *  割込み番号の範囲の判定
- *
- *  ビットパターンを求めるのを容易にするために，8は欠番になっている．
  */
-#define VALID_INTNO(intno)	(0U <= (intno) && (intno) <= 117U)
+#define VALID_INTNO(intno)	(0U <= (intno) && (intno) <= TMAX_INTNO)
 #define	VALID_INTNO_CREISR(intno)	VALID_INTNO(intno)
 #define VALID_INTNO_DISINT(intno)	VALID_INTNO(intno)
 #define VALID_INTNO_CFGINT(intno)	VALID_INTNO(intno)
-
-/*
- *  割込み要求を操作するためのビットパターンを求めるマクロ
- *
- *  シフト演算の遅いプロセッサで，メモリに余裕がある場合には，表を引く
- *  形で実装した方がよいだろう．表を引くなら，割込み番号8を欠番にする
- *  必要はない．
- */
-#define DGA_INT_BITPAT(intno)	(1U << (32U - (intno)))
-
-/*
- *  レベルトリガ／エッジトリガが設定できるかの判定用定数
- */
-#define DGA_INT_TRG_CONF	(0xe0000000U)	/* いずれにも設定できる */
-#define DGA_INT_TRG_LEVEL	(0x108f00feU)	/* レベルトリガに固定 */
-#define DGA_INT_TRG_EDGE	(0x0e70ff00U)	/* エッジトリガに固定 */
 
 /*
  *  割込み属性が設定されているかを判別するための変数（kernel_cfg.c）
@@ -173,10 +155,6 @@ extern  bool_t x_probe_int(INTNO intno);
 
 /*
  *  割込み要求ラインの属性の設定
- *
- *  DVE-68K/40のIRCでは，割込み要求ラインの割込み優先度にNMIを指定する
- *  ことができため，-7を与えるとNMIに設定されることとする（ターゲット定
- *  義の拡張）．
  */
 extern void	x_config_int(INTNO intno, ATR intatr, PRI intpri);
 
@@ -191,16 +169,10 @@ extern void	x_config_int(INTNO intno, ATR intatr, PRI intpri);
 Inline void
 i_begin_int(INTNO intno)
 {
-	if ((DGA_INT_BITPAT(intno) & (DGA_INT_TRG_CONF | DGA_INT_TRG_EDGE))
-																!= 0U) {
-		i_clear_int(intno);
-	}
 }
 
 /*
  *  割込みハンドラの出口で必要なIRC操作
- *
- *  DVE-68K/40では必要なIRC操作はない．
  */
 Inline void
 i_end_int(INTNO intno)
@@ -224,12 +196,6 @@ extern void	target_initialize(void);
 extern void	target_exit(void) NoReturn;
 
 #endif /* TOPPERS_MACRO_ONLY */
-
-/*
- *  微少時間待ちのための定義（本来はSILのターゲット依存部）
- */
-#define SIL_DLY_TIM1	420
-#define SIL_DLY_TIM2	90
 
 /*
  *  プロセッサ依存モジュール（PIC24F用）

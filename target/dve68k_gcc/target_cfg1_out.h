@@ -3,7 +3,7 @@
  */
 
 /*
- *		cfg1_out.c縺ｮ繝ｪ繝ｳ繧ｯ縺ｫ蠢�隕√↑繧ｹ繧ｿ繝悶�ｮ螳夂ｾｩ
+ *		cfg1_out.cのリンクに必要なスタブの定義
  */
 
 #include "m68k_gcc/prc_cfg1_out.h"

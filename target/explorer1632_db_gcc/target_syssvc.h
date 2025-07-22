@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_syssvc.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -50,11 +50,6 @@
 
 #ifndef TOPPERS_TARGET_SYSSVC_H
 #define TOPPERS_TARGET_SYSSVC_H
-
-/*
- *  ターゲットシステムのハードウェア資源の定義
- */
-//#include "dve68k.h"
 
 /*
  *  トレースログに関する設定
@@ -78,16 +73,7 @@ extern void	target_fput_log(char c);
 /*
  *  シリアルポート数の定義
  */
-//#fine TNUM_PORT		2		/* サポートするシリアルポートの数 */
 #define TNUM_PORT		1		/* サポートするシリアルポートの数 */
-
-/*
- *  シリアルポートのボーレートに関する定義
- *
- *  μPD72001のボーレートジェネレータに設定すべき値．
- */
-#define BRG1_DEF	0x00U		/* 9600bps（上位）*/
-#define BRG2_DEF	0x1eU		/* 9600bps（下位）*/
 
 /*
  *  システムログタスク関連の定数の定義

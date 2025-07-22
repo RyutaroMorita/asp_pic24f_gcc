@@ -1,8 +1,8 @@
 $ 
-$ 		ãƒ‘ã‚¹3ã®ã‚¿ãƒ¼ã‚²ãƒƒãƒˆä¾å­˜ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆï¼ˆDVE68K/40ç”¨ï¼‰
+$ 		ƒpƒX3‚Ìƒ^[ƒQƒbƒgˆË‘¶ƒeƒ“ƒvƒŒ[ƒgiDVE68K/40—pj
 $ 
 
 $ 
-$  æ¨™æº–ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰
+$  •W€ƒeƒ“ƒvƒŒ[ƒgƒtƒ@ƒCƒ‹‚ÌƒCƒ“ƒNƒ‹[ƒh
 $ 
 $INCLUDE "kernel/kernel_check.tf"$

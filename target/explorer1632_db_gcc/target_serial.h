@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_serial.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -46,9 +46,6 @@
 
 #ifndef TOPPERS_TARGET_SERIAL_H
 #define TOPPERS_TARGET_SERIAL_H
-
-//#include "dve68k.h"
-//#include "pdic/upd72001/upd72001.h"
 
 #define INT_U1RX		11
 #define INT_U1TX		12
@@ -69,8 +66,8 @@
 /*
  *  コールバックルーチンの識別番号
  */
-#define SIO_RDY_SND    1U        /* 送信可能コールバック */
-#define SIO_RDY_RCV    2U        /* 受信通知コールバック */
+#define SIO_RDY_SND     1U              /* 送信可能コールバック */
+#define SIO_RDY_RCV     2U              /* 受信通知コールバック */
 
 #ifndef TOPPERS_MACRO_ONLY
 

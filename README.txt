@@ -1,47 +1,47 @@
 
-	TOPPERS/ASP Kernel（Release 1.9.2）
+	TOPPERS/ASP Kernel�iRelease 1.9.2�j
 		Toyohashi Open Platform for Embedded Real-Time Systems/
 		Advanced Standard Profile Kernel
 
-TOPPERS/ASPカーネル（以下，ASPカーネル）は，TOPPERS新世代カーネルの基盤
-となるものとして，TOPPERSプロジェクトにおいて開発したリアルタイムカーネ
-ルです．μITRON4.0仕様のスタンダードプロファイル準拠のリアルタイムカー
-ネルであるTOPPERS/JSPカーネルを拡張・改良する形で開発しました．
+TOPPERS/ASP�J�[�l���i�ȉ��CASP�J�[�l���j�́CTOPPERS�V����J�[�l���̊��
+�ƂȂ���̂Ƃ��āCTOPPERS�v���W�F�N�g�ɂ����ĊJ���������A���^�C���J�[�l
+���ł��D��ITRON4.0�d�l�̃X�^���_�[�h�v���t�@�C�������̃��A���^�C���J�[
+�l���ł���TOPPERS/JSP�J�[�l�����g���E���ǂ���`�ŊJ�����܂����D
 
-【最初に読むべきドキュメント】
+�y�ŏ��ɓǂނׂ��h�L�������g�z
 
-ASPカーネルのユーザーズマニュアルが，doc/user.txtにあります．ASPカーネ
-ルを使用する場合には，まずはこのドキュメントからお読み下さい．
+ASP�J�[�l���̃��[�U�[�Y�}�j���A�����Cdoc/user.txt�ɂ���܂��DASP�J�[�l
+�����g�p����ꍇ�ɂ́C�܂��͂��̃h�L�������g���炨�ǂ݉������D
 
-【ファイルの閲覧にあたって】
+�y�t�@�C���̉{���ɂ������āz
 
-ASPカーネルのドキュメント（プレーンテキストファイル）およびソースファイ
-ルを読む際には，TABを4に設定してください．
+ASP�J�[�l���̃h�L�������g�i�v���[���e�L�X�g�t�@�C���j����у\�[�X�t�@�C
+����ǂލۂɂ́CTAB��4�ɐݒ肵�Ă��������D
 
-【利用条件】
+�y���p�����z
 
-ASPカーネルの利用条件は，各ファイルの先頭に表示されているTOPPERSライセ
-ンスです．TOPPERSライセンスに関するFAQが，以下のページにあります．
+ASP�J�[�l���̗��p�����́C�e�t�@�C���̐擪�ɕ\������Ă���TOPPERS���C�Z
+���X�ł��DTOPPERS���C�Z���X�Ɋւ���FAQ���C�ȉ��̃y�[�W�ɂ���܂��D
 
 	http://www.toppers.jp/faq/faq_ct12.html
 
-【質問・バグレポート・意見等の送付先】
+�y����E�o�O���|�[�g�E�ӌ����̑��t��z
 
-ASPカーネルをより良いものにするためのご意見等を歓迎します．ASPカーネル
-に関する質問やバグレポート，ご意見等は，TOPPERSプロジェクトの会員は
-TOPPERS開発者メーリングリスト（dev@toppers.jp）宛またはASPカーネルのバ
-グトラッキングシステム（Trac）に，その他の方はTOPPERSユーザーズメーリン
-グリスト（users@toppers.jp）宛にお願いします．
+ASP�J�[�l�������ǂ����̂ɂ��邽�߂̂��ӌ��������}���܂��DASP�J�[�l��
+�Ɋւ��鎿���o�O���|�[�g�C���ӌ����́CTOPPERS�v���W�F�N�g�̉����
+TOPPERS�J���҃��[�����O���X�g�idev@toppers.jp�j���܂���ASP�J�[�l���̃o
+�O�g���b�L���O�V�X�e���iTrac�j�ɁC���̑��̕���TOPPERS���[�U�[�Y���[����
+�O���X�g�iusers@toppers.jp�j���ɂ��肢���܂��D
 
-TOPPERSユーザーズメーリングリストへの登録方法については，以下のページに
-説明があります．
+TOPPERS���[�U�[�Y���[�����O���X�g�ւ̓o�^���@�ɂ��ẮC�ȉ��̃y�[�W��
+����������܂��D
 
 	http://www.toppers.jp/community.html
 
-【ポーティングにあたって】
+�y�|�[�e�B���O�ɂ������āz
 
-ASPカーネルを，TOPPERSプロジェクトからオープンソースにすることを前提に，
-未サポートのターゲットにポーティングされる場合には，あらかじめご相談く
-ださると幸いです．
+ASP�J�[�l�����CTOPPERS�v���W�F�N�g����I�[�v���\�[�X�ɂ��邱�Ƃ�O��ɁC
+���T�|�[�g�̃^�[�Q�b�g�Ƀ|�[�e�B���O�����ꍇ�ɂ́C���炩���߂����k��
+������ƍK���ł��D
 
-以上
+�ȏ�

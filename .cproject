@@ -16,10 +16,10 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildProperties="" description="" id="com.lapis_semi.lexide.managedbuilder.ui.toolchain.u8u16.2012212963" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="com.lapis_semi.lexide.managedbuilder.ui.toolchain.u8u16.2012212963.919127402" name="/" resourcePath="">
-						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.215574524" name="toolchain 縺後≠繧翫∪縺帙ｓ" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
+						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.215574524" name="toolchain がありません" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.215574524.61047629" name=""/>
-							<builder autoBuildTarget="all" cleanBuildTarget="clean" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="org.eclipse.cdt.build.core.settings.default.builder.1418891040" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make 繝薙Ν繝繝ｼ" parallelBuildOn="false" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.455205320" name="繝ｩ繧､繝悶Λ繝ｪ繝ｼ險ｭ螳壹�ｮ繝帙Ν繝繝ｼ" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
+							<builder autoBuildTarget="all" cleanBuildTarget="clean" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="org.eclipse.cdt.build.core.settings.default.builder.1418891040" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make ビルダー" parallelBuildOn="false" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.455205320" name="ライブラリー設定のホルダー" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>

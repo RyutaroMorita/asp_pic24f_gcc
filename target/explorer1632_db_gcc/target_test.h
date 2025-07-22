@@ -35,7 +35,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_test.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -46,7 +46,6 @@
 #define TOPPERS_TARGET_TEST_H
 
 #define STACK_SIZE			(1024)
-//#define STACK_SIZE			(256)
 
 #define TASK_PORTID      1
 

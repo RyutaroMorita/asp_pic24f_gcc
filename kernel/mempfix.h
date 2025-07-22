@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2011 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  @(#) $Id: mempfix.h 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		固定長メモリプール機能
+ *		�Œ蒷�������v�[���@�\
  */
 
 #ifndef TOPPERS_MEMPFIX_H
@@ -50,87 +50,87 @@
 #include "wait.h"
 
 /*
- *  固定長メモリブロック管理ブロック
+ *  �Œ蒷�������u���b�N�Ǘ��u���b�N
  *
- *  nextフィールドには，メモリブロックが割当て済みの場合はINDEX_ALLOCを，
- *  未割当ての場合は次の未割当てブロックのインデックス番号を格納する．
- *  最後の未割当てブロックの場合には，INDEX_NULLを格納する．
+ *  next�t�B�[���h�ɂ́C�������u���b�N�������čς݂̏ꍇ��INDEX_ALLOC���C
+ *  �������Ă̏ꍇ�͎��̖������ău���b�N�̃C���f�b�N�X�ԍ����i�[����D
+ *  �Ō�̖������ău���b�N�̏ꍇ�ɂ́CINDEX_NULL���i�[����D
  */
 typedef struct fixed_memoryblock_management_block {
-	uint_t		next;			/* 次の未割当てブロック */
+	uint_t		next;			/* ���̖������ău���b�N */
 } MPFMB;
 
 /*
- *  固定長メモリプール初期化ブロック
+ *  �Œ蒷�������v�[���������u���b�N
  *
- *  この構造体は，同期・通信オブジェクトの初期化ブロックの共通部分
- *  （WOBJINIB）を拡張（オブジェクト指向言語の継承に相当）したもので，
- *  最初のフィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̏������u���b�N�̋��ʕ���
+ *  �iWOBJINIB�j���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC
+ *  �ŏ��̃t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct fixed_memorypool_initialization_block {
-	ATR			mpfatr;			/* 固定長メモリプール属性 */
-	uint_t		blkcnt;			/* メモリブロック数 */
-	uint_t		blksz;			/* メモリブロックのサイズ（丸めた値） */
-	void		*mpf;			/* 固定長メモリプール領域の先頭番地 */
-	MPFMB		*p_mpfmb;		/* 固定長メモリプール管理領域の先頭番地 */
+	ATR			mpfatr;			/* �Œ蒷�������v�[������ */
+	uint_t		blkcnt;			/* �������u���b�N�� */
+	uint_t		blksz;			/* �������u���b�N�̃T�C�Y�i�ۂ߂��l�j */
+	void		*mpf;			/* �Œ蒷�������v�[���̈�̐擪�Ԓn */
+	MPFMB		*p_mpfmb;		/* �Œ蒷�������v�[���Ǘ��̈�̐擪�Ԓn */
 } MPFINIB;
 
 /*
- *  固定長メモリプール管理ブロック
+ *  �Œ蒷�������v�[���Ǘ��u���b�N
  *
- *  この構造体は，同期・通信オブジェクトの管理ブロックの共通部分（WOBJCB）
- *  を拡張（オブジェクト指向言語の継承に相当）したもので，最初の2つの
- *  フィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̊Ǘ��u���b�N�̋��ʕ����iWOBJCB�j
+ *  ���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC�ŏ���2��
+ *  �t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct fixed_memorypool_control_block {
-	QUEUE		wait_queue;		/* 固定長メモリプール待ちキュー */
-	const MPFINIB *p_mpfinib;	/* 初期化ブロックへのポインタ */
-	uint_t		fblkcnt;		/* 未割当てブロック数 */
-	uint_t		unused;			/* 未使用ブロックの先頭 */
-	uint_t		freelist;		/* 未割当てブロックのリスト */
+	QUEUE		wait_queue;		/* �Œ蒷�������v�[���҂��L���[ */
+	const MPFINIB *p_mpfinib;	/* �������u���b�N�ւ̃|�C���^ */
+	uint_t		fblkcnt;		/* �������ău���b�N�� */
+	uint_t		unused;			/* ���g�p�u���b�N�̐擪 */
+	uint_t		freelist;		/* �������ău���b�N�̃��X�g */
 } MPFCB;
 
 /*
- *  固定長メモリプール待ち情報ブロックの定義
+ *  �Œ蒷�������v�[���҂����u���b�N�̒�`
  *
- *  この構造体は，同期・通信オブジェクトの待ち情報ブロックの共通部分
- *  （WINFO_WOBJ）を拡張（オブジェクト指向言語の継承に相当）したもので，
- *  最初の2つのフィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̑҂����u���b�N�̋��ʕ���
+ *  �iWINFO_WOBJ�j���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC
+ *  �ŏ���2�̃t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct fixed_memorypool_waiting_information {
-	WINFO		winfo;			/* 標準の待ち情報ブロック */
-	MPFCB		*p_mpfcb;		/* 待っている固定長メモリプールの管理ブロック*/
-	void		*blk;			/* 獲得したメモリブロック */
+	WINFO		winfo;			/* �W���̑҂����u���b�N */
+	MPFCB		*p_mpfcb;		/* �҂��Ă���Œ蒷�������v�[���̊Ǘ��u���b�N*/
+	void		*blk;			/* �l�������������u���b�N */
 } WINFO_MPF;
 
 /*
- *  固定長メモリプールIDの最大値（kernel_cfg.c）
+ *  �Œ蒷�������v�[��ID�̍ő�l�ikernel_cfg.c�j
  */
 extern const ID	tmax_mpfid;
 
 /*
- *  固定長メモリプール初期化ブロックのエリア（kernel_cfg.c）
+ *  �Œ蒷�������v�[���������u���b�N�̃G���A�ikernel_cfg.c�j
  */
 extern const MPFINIB	mpfinib_table[];
 
 /*
- *  固定長メモリプール管理ブロックのエリア（kernel_cfg.c）
+ *  �Œ蒷�������v�[���Ǘ��u���b�N�̃G���A�ikernel_cfg.c�j
  */
 extern MPFCB	mpfcb_table[];
 
 /*
- *  固定長メモリプール管理ブロックから固定長メモリプールIDを取り出すた
- *  めのマクロ
+ *  �Œ蒷�������v�[���Ǘ��u���b�N����Œ蒷�������v�[��ID�����o����
+ *  �߂̃}�N��
  */
 #define	MPFID(p_mpfcb)	((ID)(((p_mpfcb) - mpfcb_table) + TMIN_MPFID))
 
 /*
- *  固定長メモリプール機能の初期化
+ *  �Œ蒷�������v�[���@�\�̏�����
  */
 extern void	initialize_mempfix(void);
 
 /*
- *  固定長メモリプールからブロックを獲得
+ *  �Œ蒷�������v�[������u���b�N���l��
  */
 extern void	get_mpf_block(MPFCB *p_mpfcb, void **p_blk);
 

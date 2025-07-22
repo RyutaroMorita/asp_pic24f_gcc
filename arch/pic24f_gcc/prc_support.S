@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  $Id: prc_support.S 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -45,9 +45,9 @@
  */
 
 #define	TOPPERS_MACRO_ONLY
-#define UINT_C(val)			(val)		/* uint_t型の定数を作るマクロ */
-#define ULONG_C(val)		(val)		/* ulong_t型の定数を作るマクロ */
-#define CAST(type, val)		(val)		/* 型キャストを行うマクロ */
+#define UINT_C(val)			(val)			/* uint_t型の定数を作るマクロ */
+#define ULONG_C(val)		(val)			/* ulong_t型の定数を作るマクロ */
+#define CAST(type, val)		(val)			/* 型キャストを行うマクロ */
 #include "kernel_impl.h"
 #include "offset.h"
 
@@ -74,12 +74,6 @@ __kernel_dispatch:
 	mov			w2, [w1 + TCB_pc]			/* 実行再開番地を保存 */
 	bra			dispatcher
 
-;	movem.l %d2-%d7/%a2-%a6, -(%sp)		/* レジスタを保存 */
-;	move.l p_runtsk, %a0				/* p_runtskをA0に */
-;	move.l %sp, TCB_msp(%a0)			/* タスクスタックを保存 */
-;	move.l #dispatch_r, TCB_pc(%a0)		/* 実行再開番地を保存 */
-;	jbra dispatcher
-
 dispatch_r:
 	mov			[--w15], w14				/* レジスタを復帰 */
 	mov.d		[--w15], w12
@@ -96,17 +90,8 @@ dispatch_r:
 	cp			__kernel_ipmflg				/* ipmflgがtrueであれば           */
 	bra			nz, __kernel_call_texrtn	/* タスク例外処理ルーチンの呼出し */
 
-;	movem.l (%sp)+, %d2-%d7/%a2-%a6		/* レジスタを復帰 */
-;	btst.b #TCB_enatex_bit, TCB_enatex(%a0)
-;	jbeq dispatch_r_1					/* enatexがfalseならリターン */
-;	tst.l TCB_texptn(%a0)				/* texptnが0ならリターン */
-;	jbeq dispatch_r_1
-;	tst.l ipmflg						/* ipmflgがtrueであれば            */
-;	jbne call_texrtn					/*  タスク例外処理ルーチンの呼出し */
 dispatch_r_1:
 	return
-
-;	rts
 
 /*
  *  ディスパッチャの動作開始（prc_support.S）
@@ -133,16 +118,6 @@ __kernel_start_dispatch:
 	mov			w0, _SR						/*  カーネル管理外の割込みを許可 */
 	bra			dispatcher_0
 
-;#if TIPM_LOCK == -7
-;	or.w #0x1000, %sr					/* マスタモードに */
-;#else /* TIPM_LOCK == -7 */
-;	move.w %sr, %d0						/* マスタモード・                */
-;	and.w #~0x0700, %d0					/*  カーネル管理外の割込みを許可 */
-;	or.w #(0x1000 | IIPM_LOCK), %d0
-;	move.w %d0, %sr
-;#endif /* TIPM_LOCK == -7 */
-;	jbra dispatcher_0
-
 /*
  *  現在のコンテキストを捨ててディスパッチ
  */
@@ -166,12 +141,8 @@ dispatcher:
 #ifdef LOG_DSP_ENTER
 	mov			__kernel_p_runtsk, w0		/* p_runtskをパラメータに */
 	rcall		log_dsp_enter
-
-;	move.l p_runtsk, %d0					/* p_runtskをパラメータに */
-;	move.l %d0, -(%sp)
-;	jsr log_dsp_enter
-;	addq.l #4, %sp
 #endif /* LOG_DSP_ENTER */
+
 dispatcher_0:
 	mov			__kernel_p_schedtsk, w1
 	mov			w1, __kernel_p_runtsk
@@ -180,25 +151,15 @@ dispatcher_0:
 	mov			[w1 + TCB_msp], w2
 	mov			w2, w15						/* タスクスタックを復帰 */
 
-;	move.l p_schedtsk, %a0				/* p_schedtskをp_runtskに */
-;	move.l %a0, p_runtsk
-;	jbeq dispatcher_1					/* p_runtskがNULLならdispatcher_1へ */
-;	move.l TCB_msp(%a0), %sp			/* タスクスタックを復帰 */
 #ifdef LOG_DSP_LEAVE
 	mov			__kernel_p_runtsk, w0		/* p_runtskをパラメータに */
 	rcall		log_dsp_leave
 	mov			__kernel_p_runtsk, w1
-
-;	move.l %a0, -(%sp)					/* p_runtskをパラメータに */
-;	jsr log_dsp_leave
-;	addq.l #4, %sp
-;	move.l p_runtsk, %a0
 #endif /* LOG_DSP_LEAVE */
+
 	mov			[w1 + TCB_pc], w2			/* 実行再開番地へ分岐 */
 	goto		w2
 
-;	move.l TCB_pc(%a0), %a1				/* 実行再開番地へ分岐 */
-;	jmp (%a1)
 dispatcher_1:
 	/*
 	 *  CPUロック状態を解除する準備をする．
@@ -208,8 +169,6 @@ dispatcher_1:
 	mov			_SR, w3						/* SRをw3に保存 */
 	clr			__kernel_lock_flag			/* CPUロック解除状態に */
 
-;	move.w %sr, %d0						/* SRをD0に保存 */
-;	clr.l lock_flag						/* CPUロック解除状態に */
 dispatcher_2:
 	/*
 	 *  割込みを許可し，割込みモードに切り換えて，割込みを待つ．
@@ -241,11 +200,6 @@ dispatcher_2:
 	mov			w3, _SR						/* 元の状態に戻す */
 	clr			__kernel_reqflg
 
-;	stop #0x2000						/* 割込み待ち */
-;	move.w %d0, %sr						/* 元の状態に戻す */
-;	tst.l reqflg						/* reqflgがfalseならdispatcher_2へ */
-;	jbeq dispatcher_2
-;	clr.l reqflg						/* reqflgをfalseに */
 	/*
 	 *  CPUロック状態に戻す．割込み待ちの間に実行した割込みハンドラによ
 	 *  り，saved_iipmが書き換えられる可能性があるため，元の値に戻す必
@@ -258,25 +212,14 @@ dispatcher_2:
 	inc			__kernel_lock_flag			/* CPUロック状態に */
 	bra			dispatcher_0
 
-;	clr.w saved_iipm					/* saved_iipmを0にする */
-;	move.l #true, lock_flag				/* CPUロック状態に */
-;	jbra dispatcher_0
-
 /*
  *  カーネルの終了処理の呼出し
- *
- *  M68040では，モード切換えによりスタックも切り換わるため，明示的なス
- *  タック切換えは必要ない．最初から割込みモードであった場合も，同じ処
- *  理でよい．
  */
 	.globl __kernel_call_exit_kernel
 __kernel_call_exit_kernel:
 	inc			__kernel_int_cnt			/* 割込みモードに */
 	mov			#__SP_init, w15
 	goto		__kernel_exit_kernel		/* カーネルの終了処理を呼ぶ */
-
-;	and.w #~0x1000, %sr					/* 割込みモードに */
-;	jmp exit_kernel						/* カーネルの終了処理を呼ぶ */
 
 /*
  *  タスク開始時処理
@@ -301,14 +244,6 @@ __kernel_start_r:
 
 exit_r:
 	goto		_ext_tsk
-
-;	clr.l lock_flag						/* CPUロック解除状態に */
-;	and.w #~0x0700, %sr
-;	move.l TCB_p_tinib(%a0), %a1		/* p_runtsk->p_tinibをA1に */
-;	move.l TINIB_exinf(%a1), -(%sp)		/* exinfをスタックに積む */
-;	move.l #ext_tsk, -(%sp)				/* ext_tskをスタックに積む */
-;	move.l TINIB_task(%a1), %a0			/* タスクの起動番地をA0に */
-;	jmp (%a0)
 
 /*
  *  割込みエントリ（w1にエントリ番号が入る）
@@ -377,8 +312,6 @@ ret_int:
 	cp			__kernel_int_cnt			/* 戻り先が割込みモードなら */
 	bra			nz, ret_int_1_d				/*           すぐにリターン */
 
-;	btst.b #4, 16(%sp)					/* 戻り先が割込みモードなら */
-;	jbeq ret_int_1						/*           すぐにリターン */
 	/*
 	 *  カーネル管理の割込みを禁止する．この時点では，CPUロック状態に
 	 *  はならない（lock_flagとsaved_iipmは更新しない）．
@@ -388,9 +321,7 @@ ret_int:
 	 *  された場合に，すぐにディスパッチされないという問題が生じるため
 	 *  である．
 	 */
-;#if TIPM_LOCK == -7
-;	or.w #0x0700, %sr					/* すべての割込みを禁止 */
-;#else /* TIPM_LOCK == -7 */
+
 	/*
 	 *  このルーチンはカーネル管理の割込みから起動されるため，ここでは，
 	 *  割込み優先度マスクがTIPM_LOCKよりも低いと想定できる．
@@ -401,20 +332,12 @@ ret_int:
 	mov			#IIPM_LOCK, w2
 	ior			w2, w0, w0
 	mov			w0, _SR
-
-;	move.w %sr, %d0						/* カーネル管理の割込みを禁止 */
-;	and.w #~0x0700, %d0
-;	or.w #IIPM_LOCK, %d0
-;	move.w %d0, %sr
-;#endif /* TIPM_LOCK == -7 */
 	mov			#0, w0						/* reqflgがtrueであればret_int_2へ */
 	cp			__kernel_reqflg
 	bra			nz, ret_int_2
 
 	mov			__kernel_int_sp, w15		/* マスタモードに（スタック切換え） */	/* 12/14 修正 */
 
-;	tst.l reqflg						/* reqflgがtrueであればret_int_2へ */
-;	jbne ret_int_2
 ret_int_1:
 	/*
 	 *  割込み処理からのリターンにより，CPUロック解除状態に移行するよう
@@ -437,17 +360,9 @@ ret_int_1:
 ret_int_1_d:
 	bra			ret_int_1
 
-;	clr.l lock_flag						/* CPUロック解除の準備 */
-;	movem.l (%sp)+, %d0-%d1/%a0-%a1		/* スクラッチレジスタを復帰 */
-;	rte
-
 ret_int_2:
-	mov			__kernel_int_sp, w15			/* マスタモードに（スタック切換え） */
+	mov			__kernel_int_sp, w15		/* マスタモードに（スタック切換え） */
 
-;	movem.l (%sp)+, %d0-%d1/%a0-%a1		/* スクラッチレジスタを復帰 */
-;	addq.l #8, %sp						/* スローアウェイフレームを捨てる */
-;	or.w #0x1000, %sr					/* マスタモードに（スタック切換え）*/
-;	movem.l %d0-%d1/%a0-%a1, -(%sp)		/* スクラッチレジスタを保存 */
 ret_int_3:
 	/*
 	 *  ここへは，CPU例外ハンドラの出口処理からも分岐してくる．
@@ -459,7 +374,6 @@ ret_int_3:
 	 */
 	clr			__kernel_reqflg				/* reqflgをfalseに */
 
-;	clr.l reqflg						/* reqflgをfalseに */
 	/*
 	 *  CPUロック状態に移行し，割込み優先度マスクを割込み処理前の値に設
 	 *	定する．カーネル管理の割込みはすでに禁止しているので，lock_flag
@@ -477,10 +391,6 @@ ret_int_3:
 	mov			w2, __kernel_saved_iipm
 	inc			__kernel_lock_flag			/* lock_flagをtrueに */
 
-;	move.w 16(%sp), %d0					/* 戻り先のSRをD0に */
-;	and.w #0x0700, %d0					/* IPMを取り出してsaved_iipmに */
-;	move.w %d0, saved_iipm
-;	move.l #true, lock_flag				/* lock_flagをtrueに */
 	/*
 	 *  dspflgがfalseである場合と，p_runtskとp_schedtskが同じ場合には，
 	 *  ディスパッチを行わない．このチェックが必要なのは，タスク例外処
@@ -506,23 +416,12 @@ ret_int_3:
 	mov			w2, [w1 + TCB_pc]			/* 実行再開番地を保存 */
 	bra			dispatcher
 
-;	move.l p_runtsk, %a0				/* p_runtskをA0に */
-;	tst.l dspflg						/* dspflgがfalseならret_int_4へ */
-;	jbeq ret_int_4
-;	cmp.l p_schedtsk, %a0				/* p_runtskとp_schedtskが同じなら */
-;	jbeq ret_int_4						/*                    ret_int_4へ */
-;	movem.l %d2-%d7/%a2-%a6, -(%sp)		/* 残りのレジスタを保存 */
-;	move.l %sp, TCB_msp(%a0)			/* タスクスタックを保存 */
-;	move.l #ret_int_r, TCB_pc(%a0)		/* 実行再開番地を保存 */
-;	jbra dispatcher
-
 ret_int_r:
 	mov			[--w15], w14				/* レジスタを復帰 */
 	mov.d		[--w15], w12
 	mov.d		[--w15], w10
 	mov.d		[--w15], w8
 
-;	movem.l (%sp)+, %d2-%d7/%a2-%a6		/* レジスタを復帰 */
 ret_int_4:
 	/*
 	 *  enatexがtrueで，texptnが0でなく，ipmflgがtrueであれば，タスク
@@ -539,13 +438,6 @@ ret_int_4:
 	bra			z, ret_int_5
 	rcall		__kernel_call_texrtn		/* タスク例外処理ルーチンの呼出し */
 
-;	btst.b #TCB_enatex_bit, TCB_enatex(%a0)
-;	jbeq ret_int_5						/* enatexがfalseならret_int_5へ */
-;	tst.l TCB_texptn(%a0)				/* texptnが0ならret_int_5へ */
-;	jbeq ret_int_5
-;	tst.l ipmflg						/* ipmflgがfalseならret_int_5へ */
-;	jbeq ret_int_5
-;	jsr call_texrtn						/* タスク例外処理ルーチンの呼出し */
 ret_int_5:
 	/*
 	 *  割込み処理からのリターンにより，CPUロック解除状態に移行するよ
@@ -562,128 +454,6 @@ ret_int_5:
 	pop			RCOUNT
 	mov			[--w15], w1
 	retfie
-
-;	clr.l lock_flag						/* CPUロック解除の準備 */
-;	movem.l (%sp)+, %d0-%d1/%a0-%a1		/* スクラッチレジスタを復帰 */
-;	rte
-
-#if 0
-/*
- *  CPU例外ハンドラ出入口処理
- *
- *  exchdr_entryは，CPU例外が発生した時に実行するルーチンで，EXCHDR_ENTRY
- *  マクロで展開するCPU例外ハンドラの入口処理から，CPU例外ハンドラの番地を
- *  A1に，CPU例外ハンドラ番号をD1に入れて分岐してくる．
- *
- *  CPU例外ハンドラは，非タスクコンテキストで実行する．そのため，CPU例
- *  外ハンドラを呼び出す前に割込みモードに移行し，リターンしてきた後に
- *  元のモードに戻す．元のモードに戻すために，割込みモードに移行する前
- *  のSRを割込みスタック上に保存する（リターン先のSRを参照する手もある
- *  が，タスクスタック上に保存される場合があり，参照するのが面倒）．
- */
-	.text
-	.globl exchdr_entry
-exchdr_entry:
-	lea.l 16(%sp), %a0					/* 例外フレームの先頭をA0に */
-	move.w %sr, %d0						/* SRをD0に */
-	and.w #~0x1000, %sr					/* 割込みモードに（スタック切換え）*/
-	move.l %d0, -(%sp)					/* 元のSRをスタックに保存 */
-	and.w #0x0700, %d0					/* IPMがINT_IPM(TMIN_INTPRI) */
-	cmp.w #INT_IPM(TMIN_INTPRI), %d0	/*    より小さければ，カーネル */
-	blt exchdr_entry_1					/*    管理のCPU例外の処理へ */
-
-	/*
-	 *  カーネル管理外のCPU例外ハンドラの呼出し
-	 */
-	move.l lock_flag, %d0				/* 元のlock_flagをスタックに保存 */
-	move.l %d0, -(%sp)
-	move.l %a0, -(%sp)					/* A0をパラメータに */
-	jsr (%a1)							/* CPU例外ハンドラを呼び出す */
-	addq.l #4, %sp						/* スタック上の引数を捨てる */
-	move.l (%sp)+, %d0					/* lock_flagを元に戻す */
-	move.l %d0, lock_flag
-	move.l (%sp)+, %d0					/* SRを元に戻す */
-	move.w %d0, %sr
-	movem.l (%sp)+, %d0-%d1/%a0-%a1		/* スクラッチレジスタを復帰 */
-	rte
-
-	/*
-	 *  カーネル管理のCPU例外ハンドラの呼出し
-	 */
-exchdr_entry_1:
-#ifdef LOG_EXC_LEAVE					/* excno_numをlog_exc_leaveの */
-	move.l %d1, -(%sp)					/*               パラメータに */
-#endif /* LOG_EXC_LEAVE */
-	move.l %a0, -(%sp)					/* A0をCPU例外ハンドラのパラメータに */
-#ifdef LOG_EXC_ENTER
-	move.l %a1, -(%sp)					/* A1を保存 */
-	move.l %d1, -(%sp)					/* excno_numをパラメータに */
-	jsr _kernel_log_exc_enter			/* log_exc_enterを呼び出す */
-	addq.l #4, %sp
-	move.l (%sp)+, %a1					/* A1を復帰 */
-#endif /* LOG_EXC_ENTER */
-	jsr (%a1)							/* CPU例外ハンドラを呼び出す */
-	addq.l #4, %sp						/* スタック上の引数を捨てる */
-#ifdef LOG_EXC_LEAVE
-	jsr _kernel_log_exc_leave			/* log_exc_leaveを呼び出す */
-	addq.l #4, %sp
-#endif /* LOG_EXC_LEAVE */
-ret_exc:
-	move.l (%sp)+, %d0					/* 元のSRをD0に */
-	and.w #0x1000, %d0					/* 元が割込みモードなら */
-	jbeq ret_exc_1						/*       すぐにリターン */
-	/*
-	 *  カーネル管理の割込みを禁止し，マスタモードに戻す．この時点では，
-	 *  CPUロック状態にはならない（lock_flagとsaved_iipmは更新しない）．
-	 *
-	 *  reqflgをチェックする前に割込みを禁止するのは，reqflgをチェック
-	 *  した直後に割込みハンドラが起動され，その中でディスパッチが要求
-	 *  された場合に，すぐにディスパッチされないという問題が生じるため
-	 *  である．
-	 */
-#if TIPM_LOCK == -7
-	or.w #0x1700, %sr					/* マスタモード・全割込み禁止 */
-#else /* TIPM_LOCK == -7 */
-	/*
-	 *  このルーチンはカーネル管理のCPU例外から起動されるため，ここでは，
-	 *  割込み優先度マスクがTIPM_LOCKよりも低いと想定できる．
-	 */
-	move.w %sr, %d0						/* マスタモード・                */
-	and.w #~0x0700, %d0					/*    カーネル管理の割込みを禁止 */
-	or.w #(0x1000|IIPM_LOCK), %d0
-	move.w %d0, %sr
-#endif /* TIPM_LOCK == -7 */
-	/*
-	 *  CPU例外では割込みモードに切り換わらないため，reqflgがtrueの場合，
-	 *  ret_int_2ではなく，ret_int_3へ分岐する．
-	 */
-	tst.l reqflg						/* reqflgがtrueであればret_int_3へ */
-	jbne ret_int_3
-ret_exc_1:
-	movem.l (%sp)+, %d0-%d1/%a0-%a1		/* スクラッチレジスタを復帰 */
-	rte
-#endif
-
-/*
- *  微少時間待ち（本来はSILのターゲット依存部）
- */
-	.globl _sil_dly_nse
-_sil_dly_nse:
-	sub			#SIL_DLY_TIM1, w0			/* D0からSIL_DLY_TIM1を引く */
-	bra			nn, _sil_dly_nse_1			/* 結果が0以下ならリターン */
-	return
-
-;	subi.l #SIL_DLY_TIM1, %d0			/* D0からSIL_DLY_TIM1を引く */
-;	jbhi _sil_dly_nse_1					/* 結果が0以下ならリターン */
-;	rts
-_sil_dly_nse_1:
-	sub			#SIL_DLY_TIM2, w0			/* D0からSIL_DLY_TIM2を引く */
-	bra			nn, _sil_dly_nse_1			/* 結果が0より大きければループ */
-	return
-
-;	subi.l #SIL_DLY_TIM2, %d0			/* D0からSIL_DLY_TIM2を引く */
-;	jbhi _sil_dly_nse_1					/* 結果が0より大きければループ */
-;	rts
 
 ;.include "null_signature.s"
 ;

@@ -36,7 +36,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_stddef.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -85,7 +85,6 @@ typedef unsigned int		uintptr_t;	/* ポインタを格納できる符号無し整数 */
 Inline void
 TOPPERS_assert_abort(void)
 {
-//	Asm("trap #2");
 	while(1);
 }
 

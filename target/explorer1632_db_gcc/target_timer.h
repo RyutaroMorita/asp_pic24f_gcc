@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: target_timer.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -48,7 +48,6 @@
 #define TOPPERS_TARGET_TIMER_H
 
 #include <sil.h>
-//#include "dve68k.h"
 
 #define INT_T1			3
 
@@ -69,8 +68,6 @@ typedef uint32_t	CLOCK;
 
 /*
  *  タイマ値の内部表現とミリ秒・μ秒単位との変換
- *
- *  DVE68K/40では，タイマは1μ秒毎にカウントアップする．
  */
 #define TIMER_CLOCK				1000U
 #define TO_CLOCK(nume, deno)	((CLOCK)(TIMER_CLOCK * (nume) / (deno)))
@@ -114,26 +111,6 @@ extern void	target_timer_terminate(intptr_t exinf);
 Inline CLOCK
 target_timer_get_current(void)
 {
-#if 0
-	CLOCK		clk;
-	uint32_t	saved_csr12;
-	SIL_PRE_LOC;
-
-	/*
-	 *  タイマの動作を一時的に停止し，タイマ値を読み出す．タイマの動作
-	 *  を一時的に停止させると，システム時刻がずれるために望ましくない
-	 *  が，DVE68K/40のハードウェア的な制約であり，やむをえない．ずれを
-	 *  最小に抑えるために，割込みロック状態とする．
-	 */
-	SIL_LOC_INT();
-	saved_csr12 = dga_read((void *) TADR_DGA_CSR12);
-	dga_write((void *) TADR_DGA_CSR12, CSR12_STOP);
-	sil_dly_nse(TIMER_STOP_DELAY);
-	clk = dga_read((void *) TADR_DGA_CSR13) & 0x00ffffffU;
-	dga_write((void *) TADR_DGA_CSR12, saved_csr12);
-	SIL_UNL_INT();
-	return(clk);
-#endif
 	return 0;
 }
 

@@ -5,40 +5,40 @@
  *  Copyright (C) 2005-2013 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  $Id: test_lib.c 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /* 
- *		テストプログラム用ライブラリ
+ *		�e�X�g�v���O�����p���C�u����
  */
 
 #include <kernel.h>
@@ -51,17 +51,17 @@
 #include <test_lib.h>
 
 /*
- *	チェックポイント
+ *	�`�F�b�N�|�C���g
  */
 static uint_t	check_count = 0u;
 
 /*
- *	自己診断関数
+ *	���Ȑf�f�֐�
  */
 static BIT_FUNC	check_bit_func = NULL;
 
 /*
- *	自己診断関数の設定
+ *	���Ȑf�f�֐��̐ݒ�
  */
 void
 set_bit_func(BIT_FUNC bit_func)
@@ -70,7 +70,7 @@ set_bit_func(BIT_FUNC bit_func)
 }
 
 /*
- *  テストプログラムの開始
+ *  �e�X�g�v���O�����̊J�n
  */
 void
 test_start(char *progname)
@@ -79,7 +79,7 @@ test_start(char *progname)
 }
 
 /*
- *  システムログの出力処理
+ *  �V�X�e�����O�̏o�͏���
  */
 void
 syslog_flush(void)
@@ -88,8 +88,8 @@ syslog_flush(void)
 	ER_UINT	rercd;
 
 	/*
-	 *  ログバッファに記録されたログ情報を，低レベル出力機能を用いて出
-	 *  力する．
+	 *  ���O�o�b�t�@�ɋL�^���ꂽ���O�����C�჌�x���o�͋@�\��p���ďo
+	 *  �͂���D
 	 */
 	while ((rercd = syslog_rea_log(&logbuf)) >= 0) {
 		if (rercd > 0) {
@@ -103,7 +103,7 @@ syslog_flush(void)
 }
 
 /*
- *	テストプログラムの終了
+ *	�e�X�g�v���O�����̏I��
  */
 void
 test_finish(void)
@@ -114,12 +114,12 @@ test_finish(void)
 	syslog_flush();
 	(void) ext_ker();
 
-	/* ここへ来ることはないはず */
+	/* �����֗��邱�Ƃ͂Ȃ��͂� */
 	SIL_UNL_INT();
 }
 
 /*
- *	チェックポイント
+ *	�`�F�b�N�|�C���g
  */
 void
 check_point(uint_t count)
@@ -129,12 +129,12 @@ check_point(uint_t count)
 	SIL_PRE_LOC;
 
 	/*
-	 *  割込みロック状態に
+	 *  �����݃��b�N��Ԃ�
 	 */
 	SIL_LOC_INT();
 
 	/*
-	 *  シーケンスチェック
+	 *  �V�[�P���X�`�F�b�N
 	 */
 	if (++check_count == count) {
 		syslog_1(LOG_NOTICE, "Check point %d passed.", count);
@@ -145,7 +145,7 @@ check_point(uint_t count)
 	}
 
 	/*
-	 *  カーネルの内部状態の検査
+	 *  �J�[�l���̓�����Ԃ̌���
 	 */
 	if (check_bit_func != NULL) {
 		rercd = (*check_bit_func)();
@@ -157,20 +157,20 @@ check_point(uint_t count)
 	}
 
 	/*
-	 *  エラーが検出された場合は，テストプログラムを終了する．
+	 *  �G���[�����o���ꂽ�ꍇ�́C�e�X�g�v���O�������I������D
 	 */
 	if (errorflag) {
 		test_finish();
 	}
 
 	/*
-	 *  割込みロック状態を解除
+	 *  �����݃��b�N��Ԃ�����
 	 */
 	SIL_UNL_INT();
 }
 
 /*
- *	完了チェックポイント
+ *	�����`�F�b�N�|�C���g
  */
 void
 check_finish(uint_t count)
@@ -181,7 +181,7 @@ check_finish(uint_t count)
 }
 
 /*
- *	条件チェックのエラー処理
+ *	�����`�F�b�N�̃G���[����
  */
 void
 _check_assert(const char *expr, const char *file, int_t line)
@@ -192,7 +192,7 @@ _check_assert(const char *expr, const char *file, int_t line)
 }
 
 /*
- *	エラーコードチェックのエラー処理
+ *	�G���[�R�[�h�`�F�b�N�̃G���[����
  */
 void
 _check_ercd(ER ercd, const char *file, int_t line)

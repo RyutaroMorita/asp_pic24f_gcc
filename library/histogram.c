@@ -5,40 +5,40 @@
  *  Copyright (C) 2006-2011 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  @(#) $Id: histogram.c 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		実行時間分布集計モジュール
+ *		���s���ԕ��z�W�v���W���[��
  */
 
 #include <kernel.h>
@@ -48,58 +48,58 @@
 #include "target_test.h"
 
 /*
- *  実行時間分布計測の数
+ *  ���s���ԕ��z�v���̐�
  */
 #ifndef TNUM_HIST
 #define TNUM_HIST		10
 #endif /* TNUM_HIST */
 
 /*
- *  ターゲット依存部で設定変更するためのマクロ
+ *  �^�[�Q�b�g�ˑ����Őݒ�ύX���邽�߂̃}�N��
  */
-#ifndef HISTTIM						/* 実行時間計測用の時刻のデータ型 */
+#ifndef HISTTIM						/* ���s���Ԍv���p�̎����̃f�[�^�^ */
 #define HISTTIM			SYSUTM
 #endif /* HISTTIM */
 
-#ifndef HIST_GET_TIM				/* 実行時間計測用の現在時刻の取得 */
+#ifndef HIST_GET_TIM				/* ���s���Ԍv���p�̌��ݎ����̎擾 */
 #ifndef TOPPERS_SUPPORT_GET_UTM
 #error get_utm is not supported.
 #endif /* TOPPERS_SUPPORT_GET_UTM */
 #define HIST_GET_TIM(p_time)	((void) get_utm(p_time))
 #endif /* HIST_GET_TIM */
 
-#ifndef HIST_CONV_TIM				/* 時刻の差から実行時間への変換 */
+#ifndef HIST_CONV_TIM				/* �����̍�������s���Ԃւ̕ϊ� */
 #define HIST_CONV_TIM(time)		((uint_t)(time))
 #endif /* HIST_CONV_TIM */
 
-#ifndef HIST_BM_HOOK				/* 実行時間計測直前に行うべき処理 */
+#ifndef HIST_BM_HOOK				/* ���s���Ԍv�����O�ɍs���ׂ����� */
 #define HIST_BM_HOOK()			((void) 0)
 #endif
 
 /*
- *  実行時間分布計測管理ブロック
+ *  ���s���ԕ��z�v���Ǘ��u���b�N
  */
 typedef struct histogram_control_block {
-	HISTTIM		begin_time;			/* 計測開始時刻 */
-	uint_t		maxval;				/* 分布を記録する最大時間 */
-	uint_t		*histarea;			/* 分布を記録するメモリ領域 */
-	uint_t		over;				/* 最大時間を超えた度数 */
-	uint_t		under;				/* 時間の逆転が疑われる度数 */
+	HISTTIM		begin_time;			/* �v���J�n���� */
+	uint_t		maxval;				/* ���z���L�^����ő厞�� */
+	uint_t		*histarea;			/* ���z���L�^���郁�����̈� */
+	uint_t		over;				/* �ő厞�Ԃ𒴂����x�� */
+	uint_t		under;				/* ���Ԃ̋t�]���^����x�� */
 } HISTCB;
 
 /*
- *  実行時間分布計測管理ブロックのエリア
+ *  ���s���ԕ��z�v���Ǘ��u���b�N�̃G���A
  */
 static HISTCB	histcb_table[TNUM_HIST];
 
 /*
- *  実行時間分布計測IDの最小値と最大値
+ *  ���s���ԕ��z�v��ID�̍ŏ��l�ƍő�l
  */
 #define TMIN_HISTID		1
 #define TMAX_HISTID		(TMIN_HISTID + TNUM_HIST - 1)
 
 /*
- *  実行時間分布計測の初期化
+ *  ���s���ԕ��z�v���̏�����
  */
 void
 init_hist(ID histid, uint_t maxval, uint_t histarea[])
@@ -120,7 +120,7 @@ init_hist(ID histid, uint_t maxval, uint_t histarea[])
 }
 
 /*
- *  実行時間計測の開始
+ *  ���s���Ԍv���̊J�n
  */
 void
 begin_measure(ID histid)
@@ -135,7 +135,7 @@ begin_measure(ID histid)
 }
 
 /*
- *  実行時間計測の終了
+ *  ���s���Ԍv���̏I��
  */
 void
 end_measure(ID histid)
@@ -162,7 +162,7 @@ end_measure(ID histid)
 }
 
 /*
- *  実行時間分布計測の表示
+ *  ���s���ԕ��z�v���̕\��
  */
 void
 print_hist(ID histid)

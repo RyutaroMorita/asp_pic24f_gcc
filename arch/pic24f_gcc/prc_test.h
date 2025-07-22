@@ -35,7 +35,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: prc_test.h 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -44,8 +44,5 @@
 
 #ifndef TOPPERS_PRC_TEST_H
 #define TOPPERS_PRC_TEST_H
-
-//#define CPUEXC1					5		/* ゼロ除算例外 */
-//#define RAISE_CPU_EXCEPTION		syslog(LOG_NOTICE, "zerodiv = %d", 10 / 0)
 
 #endif /* TOPPERS_PRC_TEST_H */

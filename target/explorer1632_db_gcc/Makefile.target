@@ -41,11 +41,6 @@ SYSSVC_DIR := $(SYSSVC_DIR)
 SYSSVC_COBJS := $(SYSSVC_COBJS) target_serial.o
 
 #
-#  コンフィギュレータ関係の変数の定義
-#
-CFG_TABS := $(CFG_TABS) --cfg1-def-table $(TARGETDIR)/target_def.csv
-
-#
 #  トレースログ記録のサンプルコードに関する定義
 #
 ifeq ($(ENABLE_TRACE),true)
@@ -53,12 +48,6 @@ ifeq ($(ENABLE_TRACE),true)
 	KERNEL_DIR := $(KERNEL_DIR) $(SRCDIR)/arch/logtrace
 	KERNEL_COBJS := $(KERNEL_COBJS) trace_config.o trace_dump.o
 endif
-
-#
-#  各セグメントの開始アドレスの定義
-#
-#TEXT_START_ADDRESS = 00010000
-#DATA_START_ADDRESS = 00100000
 
 #
 #  リンカスクリプトの定義
@@ -80,11 +69,7 @@ $(START_OBJS:.o=.d): %.d: %.S
 	@$(PERL) $(SRCDIR)/utils/makedep -C $(CC) $(MAKEDEP_OPTS) \
 		-O "$(CFLAGS) $(KERNEL_CFLAGS)" $< >> Makefile.depend
 
-#LDFLAGS := -nostdlib $(LDFLAGS)
-#CFG1_OUT_LDFLAGS := -nostdlib $(CFG1_OUT_LDFLAGS)
-#CFG1_OUT_LDFLAGS := -no-legacy-libc \
-#					-Wl,--local-stack,--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--stack=16,--check-sections,--data-init,--pack-data,--handles,--no-isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map=cfg1_out.map \
-#					$(CFG1_OUT_LDFLAGS)
+COPTS := $(COPTS) -mcpu=24FJ1024GB610
 CFG1_OUT_LDFLAGS := -Wl,--local-stack,--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--stack=16,--check-sections,--data-init,--pack-data,--handles,--no-isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map=cfg1_out.map \
 					$(CFG1_OUT_LDFLAGS)
 LIBS := $(LIBS)
@@ -92,7 +77,6 @@ LIBS := $(LIBS)
 #
 #  依存関係の定義
 #
-cfg1_out.c: $(TARGETDIR)/target_def.csv
 kernel_cfg.timestamp: $(TARGETDIR)/target.tf
 $(OBJFILE): $(TARGETDIR)/target_check.tf
 

@@ -37,7 +37,7 @@
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
  *
- *  @(#) $Id: prc_config.c 2728 2015-12-30 01:46:11Z ertl-honda $
+ *	2025/07/20 Ryutaro Morita
  */
 
 /*
@@ -99,37 +99,6 @@ prc_terminate(void)
 	set_vbr(EXCVT_ORIG);
 #endif /* EXCVT_KERNEL */
 }
-
-/*
- *  CPU例外の発生状況のログ出力
- *
- *  CPU例外ハンドラの中から，CPU例外情報ポインタ（p_excinf）を引数とし
- *  て呼び出すことで，CPU例外の発生状況をシステムログに出力する．
- */
-#ifdef SUPPORT_XLOG_SYS
-
-void
-xlog_sys(void *p_excinf)
-{
-	char	*excsp = (char *) p_excinf;
-	uint_t	format;
-
-	syslog_0(LOG_ERROR, "CPU Exception Information:");
-	syslog_4(LOG_ERROR, "SR = %04x (M = %d, S = %d, IPM = %d)",
-				*((uint16_t *) excsp),
-				(*((uint16_t *) excsp) & 0x1000U) >> 12,
-				(*((uint16_t *) excsp) & 0x2000U) >> 13,
-				(*((uint16_t *) excsp) & 0x0700U) >> 8);
-	syslog_1(LOG_ERROR, "PC = %08x", *((uint32_t *)(excsp + 2)));
-	format = (*((uint16_t *)(excsp + 6)) & 0xf000U) >> 12;
-	syslog_2(LOG_ERROR, "Format = %d, Vector Offset = %03x",
-				format, (*((uint16_t *)(excsp + 6)) & 0x0fffU));
-	if (format >= 2U) {
-		syslog_1(LOG_ERROR, "ADR = %08x", *((uint32_t *)(excsp + 8)));
-	}
-}
-
-#endif /* SUPPORT_XLOG_SYS */
 
 #ifndef OMIT_DEFAULT_INT_HANDLER
 /*

@@ -6,40 +6,40 @@
  *  Copyright (C) 2005-2012 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  @(#) $Id: mutex.h 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		ミューテックス機能
+ *		�~���[�e�b�N�X�@�\
  */
 
 #ifndef TOPPERS_MUTEX_H
@@ -48,116 +48,116 @@
 #include "wait.h"
 
 /*
- *  ミューテックス初期化ブロック
+ *  �~���[�e�b�N�X�������u���b�N
  *
- *  この構造体は，同期・通信オブジェクトの初期化ブロックの共通部分
- *  （WOBJINIB）を拡張（オブジェクト指向言語の継承に相当）したもので，
- *  最初のフィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̏������u���b�N�̋��ʕ���
+ *  �iWOBJINIB�j���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC
+ *  �ŏ��̃t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct mutex_initialization_block {
-	ATR			mtxatr;			/* ミューテックス属性 */
-	uint_t		ceilpri;		/* ミューテックスの上限優先度（内部表現）*/
+	ATR			mtxatr;			/* �~���[�e�b�N�X���� */
+	uint_t		ceilpri;		/* �~���[�e�b�N�X�̏���D��x�i�����\���j*/
 } MTXINIB;
 
 /*
- *  ミューテックス管理ブロック
+ *  �~���[�e�b�N�X�Ǘ��u���b�N
  *
- *  この構造体は，同期・通信オブジェクトの管理ブロックの共通部分（WOBJCB）
- *  を拡張（オブジェクト指向言語の継承に相当）したもので，最初の2つの
- *  フィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̊Ǘ��u���b�N�̋��ʕ����iWOBJCB�j
+ *  ���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC�ŏ���2��
+ *  �t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct mutex_control_block {
-	QUEUE		wait_queue;		/* ミューテックス待ちキュー */
-	const MTXINIB *p_mtxinib;	/* 初期化ブロックへのポインタ */
-	TCB			*p_loctsk;		/* ミューテックスをロックしているタスク */
-	QUEUE		mutex_queue;	/* ロックしているミューテックスのキュー */
+	QUEUE		wait_queue;		/* �~���[�e�b�N�X�҂��L���[ */
+	const MTXINIB *p_mtxinib;	/* �������u���b�N�ւ̃|�C���^ */
+	TCB			*p_loctsk;		/* �~���[�e�b�N�X�����b�N���Ă���^�X�N */
+	QUEUE		mutex_queue;	/* ���b�N���Ă���~���[�e�b�N�X�̃L���[ */
 } MTXCB;
 
 /*
- *  ミューテックス待ち情報ブロックの定義
+ *  �~���[�e�b�N�X�҂����u���b�N�̒�`
  *
- *  この構造体は，同期・通信オブジェクトの待ち情報ブロックの共通部分
- *  （WINFO_WOBJ）を拡張（オブジェクト指向言語の継承に相当）したもので，
- *  すべてのフィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̑҂����u���b�N�̋��ʕ���
+ *  �iWINFO_WOBJ�j���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC
+ *  ���ׂẴt�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct mutex_waiting_information {
-	WINFO	winfo;			/* 標準の待ち情報ブロック */
-	MTXCB	*p_mtxcb;		/* 待っているミューテックスの管理ブロック */
+	WINFO	winfo;			/* �W���̑҂����u���b�N */
+	MTXCB	*p_mtxcb;		/* �҂��Ă���~���[�e�b�N�X�̊Ǘ��u���b�N */
 } WINFO_MTX;
 
 /*
- *  ミューテックスIDの最大値（kernel_cfg.c）
+ *  �~���[�e�b�N�XID�̍ő�l�ikernel_cfg.c�j
  */
 extern const ID	tmax_mtxid;
 
 /*
- *  ミューテックス初期化ブロックのエリア（kernel_cfg.c）
+ *  �~���[�e�b�N�X�������u���b�N�̃G���A�ikernel_cfg.c�j
  */
 extern const MTXINIB	mtxinib_table[];
 
 /*
- *  ミューテックス管理ブロックのエリア（kernel_cfg.c）
+ *  �~���[�e�b�N�X�Ǘ��u���b�N�̃G���A�ikernel_cfg.c�j
  */
 extern MTXCB	mtxcb_table[];
 
 /*
- *  ミューテックス管理ブロックからミューテックスIDを取り出すためのマクロ
+ *  �~���[�e�b�N�X�Ǘ��u���b�N����~���[�e�b�N�XID�����o�����߂̃}�N��
  */
 #define	MTXID(p_mtxcb)	((ID)(((p_mtxcb) - mtxcb_table) + TMIN_MTXID))
 
 /*
- *  ミューテックス機能の初期化
+ *  �~���[�e�b�N�X�@�\�̏�����
  */
 extern void	initialize_mutex(void);
 
 /*
- *  上限優先度違反のチェック
+ *  ����D��x�ᔽ�̃`�F�b�N
  *
- *  chg_priの中で上限優先度違反のチェックを行うために用いる関数であり，
- *  p_tcbで指定されるタスクがロックしている優先度上限ミューテックスと，
- *  ロックを待っている優先度上限ミューテックスの中で，上限優先度が
- *  bpriorityよりも低いものがあればfalseを，そうでなければtrueを返す．
+ *  chg_pri�̒��ŏ���D��x�ᔽ�̃`�F�b�N���s�����߂ɗp����֐��ł���C
+ *  p_tcb�Ŏw�肳���^�X�N�����b�N���Ă���D��x����~���[�e�b�N�X�ƁC
+ *  ���b�N��҂��Ă���D��x����~���[�e�b�N�X�̒��ŁC����D��x��
+ *  bpriority�����Ⴂ���̂������false���C�����łȂ����true��Ԃ��D
  */
 extern bool_t	(*mtxhook_check_ceilpri)(TCB *p_tcb, uint_t bpriority);
 extern bool_t	mutex_check_ceilpri(TCB *p_tcb, uint_t bpriority);
 
 /* 
- *  優先度上限ミューテックスをロックしているかのチェック
+ *  �D��x����~���[�e�b�N�X�����b�N���Ă��邩�̃`�F�b�N
  *
- *  p_tcbで指定されるタスクが優先度上限ミューテックスをロックしていれば
- *  true，そうでなければfalseを返す．
+ *  p_tcb�Ŏw�肳���^�X�N���D��x����~���[�e�b�N�X�����b�N���Ă����
+ *  true�C�����łȂ����false��Ԃ��D
  */
 extern bool_t	(*mtxhook_scan_ceilmtx)(TCB *p_tcb);
 extern bool_t	mutex_scan_ceilmtx(TCB *p_tcb);
 
 /* 
- *  タスクの現在優先度の計算
+ *  �^�X�N�̌��ݗD��x�̌v�Z
  *
- *  p_tcbで指定されるタスクの現在優先度（に設定すべき値）を計算する．
+ *  p_tcb�Ŏw�肳���^�X�N�̌��ݗD��x�i�ɐݒ肷�ׂ��l�j���v�Z����D
  */
 extern uint_t	mutex_calc_priority(TCB *p_tcb);
 
 /*
- *  ミューテックスのロック解除
+ *  �~���[�e�b�N�X�̃��b�N����
  *
- *  p_mtxcbで指定されるミューテックスをロック解除する．ロック解除した
- *  ミューテックスに，ロック待ち状態のタスクがある場合には，そのタスク
- *  にミューテックスをロックさせる．
+ *  p_mtxcb�Ŏw�肳���~���[�e�b�N�X�����b�N��������D���b�N��������
+ *  �~���[�e�b�N�X�ɁC���b�N�҂���Ԃ̃^�X�N������ꍇ�ɂ́C���̃^�X�N
+ *  �Ƀ~���[�e�b�N�X�����b�N������D
  */
 extern bool_t	mutex_release(MTXCB *p_mtxcb);
 
 /*
- *  タスクがロックしているすべてのミューテックスのロック解除
+ *  �^�X�N�����b�N���Ă��邷�ׂẴ~���[�e�b�N�X�̃��b�N����
  *
- *  p_tcbで指定されるタスクに，それがロックしているすべてのミューテック
- *  スをロック解除させる．ロック解除したミューテックスに，ロック待ち状
- *  態のタスクがある場合には，そのタスクにミューテックスをロックさせる．
+ *  p_tcb�Ŏw�肳���^�X�N�ɁC���ꂪ���b�N���Ă��邷�ׂẴ~���[�e�b�N
+ *  �X�����b�N����������D���b�N���������~���[�e�b�N�X�ɁC���b�N�҂���
+ *  �Ԃ̃^�X�N������ꍇ�ɂ́C���̃^�X�N�Ƀ~���[�e�b�N�X�����b�N������D
  *
- *  この関数は，タスクの終了時に使われるものであるため，p_tcbで指定され
- *  るタスクの優先度を変更する処理は行わない．ただし，この関数の中で他
- *  のタスクの優先度が変化し，実行すべきタスクが変わることがある．その
- *  ため，この関数から戻った後に，ディスパッチが必要か判別して，必要な
- *  場合にはディスパッチを行わなければならない．
+ *  ���̊֐��́C�^�X�N�̏I�����Ɏg������̂ł��邽�߁Cp_tcb�Ŏw�肳��
+ *  ��^�X�N�̗D��x��ύX���鏈���͍s��Ȃ��D�������C���̊֐��̒��ő�
+ *  �̃^�X�N�̗D��x���ω����C���s���ׂ��^�X�N���ς�邱�Ƃ�����D����
+ *  ���߁C���̊֐�����߂�����ɁC�f�B�X�p�b�`���K�v�����ʂ��āC�K�v��
+ *  �ꍇ�ɂ̓f�B�X�p�b�`���s��Ȃ���΂Ȃ�Ȃ��D
  */
 extern bool_t	(*mtxhook_release_all)(TCB *p_tcb);
 extern bool_t	mutex_release_all(TCB *p_tcb);

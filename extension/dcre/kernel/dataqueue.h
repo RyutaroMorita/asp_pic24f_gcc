@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2013 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  @(#) $Id: dataqueue.h 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		データキュー機能
+ *		�f�[�^�L���[�@�\
  */
 
 #ifndef TOPPERS_DATAQUEUE_H
@@ -50,115 +50,115 @@
 #include "wait.h"
 
 /*
- *  データ管理ブロック
+ *  �f�[�^�Ǘ��u���b�N
  */
 typedef struct data_management_block {
-	intptr_t	data;			/* データ本体 */
+	intptr_t	data;			/* �f�[�^�{�� */
 } DTQMB;
 
 /*
- *  データキュー初期化ブロック
+ *  �f�[�^�L���[�������u���b�N
  *
- *  この構造体は，同期・通信オブジェクトの初期化ブロックの共通部分
- *  （WOBJINIB）を拡張（オブジェクト指向言語の継承に相当）したもので，
- *  最初のフィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̏������u���b�N�̋��ʕ���
+ *  �iWOBJINIB�j���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC
+ *  �ŏ��̃t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct dataqueue_initialization_block {
-	ATR			dtqatr;			/* データキュー属性 */
-	uint_t		dtqcnt;			/* データキューの容量 */
-	DTQMB		*p_dtqmb;		/* データキュー管理領域の先頭番地 */
+	ATR			dtqatr;			/* �f�[�^�L���[���� */
+	uint_t		dtqcnt;			/* �f�[�^�L���[�̗e�� */
+	DTQMB		*p_dtqmb;		/* �f�[�^�L���[�Ǘ��̈�̐擪�Ԓn */
 } DTQINIB;
 
 /*
- *  データキュー管理ブロック
+ *  �f�[�^�L���[�Ǘ��u���b�N
  *
- *  この構造体は，同期・通信オブジェクトの管理ブロックの共通部分（WOBJCB）
- *  を拡張（オブジェクト指向言語の継承に相当）したもので，最初の2つの
- *  フィールドが共通になっている．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̊Ǘ��u���b�N�̋��ʕ����iWOBJCB�j
+ *  ���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC�ŏ���2��
+ *  �t�B�[���h�����ʂɂȂ��Ă���D
  */
 typedef struct dataqueue_control_block {
-	QUEUE		swait_queue;	/* データキュー送信待ちキュー */
-	const DTQINIB *p_dtqinib;	/* 初期化ブロックへのポインタ */
-	QUEUE		rwait_queue;	/* データキュー受信待ちキュー */
-	uint_t		count;			/* データキュー中のデータの数 */
-	uint_t		head;			/* 最初のデータの格納場所 */
-	uint_t		tail;			/* 最後のデータの格納場所の次 */
+	QUEUE		swait_queue;	/* �f�[�^�L���[���M�҂��L���[ */
+	const DTQINIB *p_dtqinib;	/* �������u���b�N�ւ̃|�C���^ */
+	QUEUE		rwait_queue;	/* �f�[�^�L���[��M�҂��L���[ */
+	uint_t		count;			/* �f�[�^�L���[���̃f�[�^�̐� */
+	uint_t		head;			/* �ŏ��̃f�[�^�̊i�[�ꏊ */
+	uint_t		tail;			/* �Ō�̃f�[�^�̊i�[�ꏊ�̎� */
 } DTQCB;
 
 /*
- *  データキュー待ち情報ブロックの定義
+ *  �f�[�^�L���[�҂����u���b�N�̒�`
  *
- *  この構造体は，同期・通信オブジェクトの待ち情報ブロックの共通部分
- *  （WINFO_WOBJ）を拡張（オブジェクト指向言語の継承に相当）したもので，
- *  最初の2つのフィールドが共通になっている．
- *  データキューへの送信待ちとデータキューからの受信待ちで，同じ待ち情
- *  報ブロックを使う．
+ *  ���̍\���̂́C�����E�ʐM�I�u�W�F�N�g�̑҂����u���b�N�̋��ʕ���
+ *  �iWINFO_WOBJ�j���g���i�I�u�W�F�N�g�w������̌p���ɑ����j�������̂ŁC
+ *  �ŏ���2�̃t�B�[���h�����ʂɂȂ��Ă���D
+ *  �f�[�^�L���[�ւ̑��M�҂��ƃf�[�^�L���[����̎�M�҂��ŁC�����҂���
+ *  ��u���b�N���g���D
  */
 typedef struct dataqueue_waiting_information {
-	WINFO		winfo;			/* 標準の待ち情報ブロック */
-	DTQCB		*p_dtqcb;		/* 待っているデータキューの管理ブロック */
-	intptr_t	data;			/* 送受信データ */
+	WINFO		winfo;			/* �W���̑҂����u���b�N */
+	DTQCB		*p_dtqcb;		/* �҂��Ă���f�[�^�L���[�̊Ǘ��u���b�N */
+	intptr_t	data;			/* ����M�f�[�^ */
 } WINFO_DTQ;
 
 /*
- *  使用していないデータキュー管理ブロックのリスト
+ *  �g�p���Ă��Ȃ��f�[�^�L���[�Ǘ��u���b�N�̃��X�g
  */
 extern QUEUE	free_dtqcb;
 
 /*
- *  データキューIDの最大値（kernel_cfg.c）
+ *  �f�[�^�L���[ID�̍ő�l�ikernel_cfg.c�j
  */
 extern const ID	tmax_dtqid;
 extern const ID	tmax_sdtqid;
 
 /*
- *  データキュー初期化ブロックのエリア（kernel_cfg.c）
+ *  �f�[�^�L���[�������u���b�N�̃G���A�ikernel_cfg.c�j
  */
 extern const DTQINIB	dtqinib_table[];
 extern DTQINIB			adtqinib_table[];
 
 /*
- *  データキュー管理ブロックのエリア（kernel_cfg.c）
+ *  �f�[�^�L���[�Ǘ��u���b�N�̃G���A�ikernel_cfg.c�j
  */
 extern DTQCB	dtqcb_table[];
 
 /*
- *  データキュー管理ブロックからデータキューIDを取り出すためのマクロ
+ *  �f�[�^�L���[�Ǘ��u���b�N����f�[�^�L���[ID�����o�����߂̃}�N��
  */
 #define	DTQID(p_dtqcb)	((ID)(((p_dtqcb) - dtqcb_table) + TMIN_DTQID))
 
 /*
- *  データキュー機能の初期化
+ *  �f�[�^�L���[�@�\�̏�����
  */
 extern void	initialize_dataqueue(void);
 
 /*
- *  データキュー管理領域へのデータの格納
+ *  �f�[�^�L���[�Ǘ��̈�ւ̃f�[�^�̊i�[
  */
 extern void	enqueue_data(DTQCB *p_dtqcb, intptr_t data);
 
 /*
- *  データキュー管理領域へのデータの強制格納
+ *  �f�[�^�L���[�Ǘ��̈�ւ̃f�[�^�̋����i�[
  */
 extern void	force_enqueue_data(DTQCB *p_dtqcb, intptr_t data);
 
 /*
- *  データキュー管理領域からのデータの取出し
+ *  �f�[�^�L���[�Ǘ��̈悩��̃f�[�^�̎�o��
  */
 extern void	dequeue_data(DTQCB *p_dtqcb, intptr_t *p_data);
 
 /*
- *  データキューへのデータ送信
+ *  �f�[�^�L���[�ւ̃f�[�^���M
  */
 extern bool_t	send_data(DTQCB *p_dtqcb, intptr_t data, bool_t *p_dspreq);
 
 /*
- *  データキューへのデータ強制送信
+ *  �f�[�^�L���[�ւ̃f�[�^�������M
  */
 extern bool_t	force_send_data(DTQCB *p_dtqcb, intptr_t data);
 
 /*
- *  データキューからのデータ受信
+ *  �f�[�^�L���[����̃f�[�^��M
  */
 extern bool_t	receive_data(DTQCB *p_dtqcb, intptr_t *p_data,
 													bool_t *p_dspreq);

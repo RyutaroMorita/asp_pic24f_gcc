@@ -6,40 +6,40 @@
  *  Copyright (C) 2005-2014 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  @(#) $Id: overrun.c 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		オーバランハンドラ機能
+ *		�I�[�o�����n���h���@�\
  */
 
 #include "kernel_impl.h"
@@ -51,7 +51,7 @@
 #include "target_timer.h"
 
 /*
- *  トレースログマクロのデフォルト定義
+ *  �g���[�X���O�}�N���̃f�t�H���g��`
  */
 #ifndef LOG_OVR_ENTER
 #define LOG_OVR_ENTER(p_runtsk)
@@ -104,12 +104,12 @@
 #ifdef TOPPERS_ovrini
 
 /*
- *  オーバランタイマが動作中かを示すフラグ
+ *  �I�[�o�����^�C�}�����쒆���������t���O
  */
 bool_t	ovrtimer_flag;
 
 /*
- *  オーバランハンドラ機能の初期化
+ *  �I�[�o�����n���h���@�\�̏�����
  */
 void
 initialize_overrun(void)
@@ -120,7 +120,7 @@ initialize_overrun(void)
 #endif /* TOPPERS_ovrini */
 
 /*
- *  オーバランハンドラ用タイマの動作開始
+ *  �I�[�o�����n���h���p�^�C�}�̓���J�n
  */
 #ifdef TOPPERS_ovrsta
 #ifndef OMIT_OVRTIMER_START
@@ -138,7 +138,7 @@ ovrtimer_start(void)
 #endif /* TOPPERS_ovrsta */
 
 /*
- *  オーバランハンドラ用タイマの停止
+ *  �I�[�o�����n���h���p�^�C�}�̒�~
  */
 #ifdef TOPPERS_ovrstp
 #ifndef OMIT_OVRTIMER_STOP
@@ -157,7 +157,7 @@ ovrtimer_stop(void)
 #endif /* TOPPERS_ovrstp */
 
 /*
- *  オーバランハンドラの動作開始
+ *  �I�[�o�����n���h���̓���J�n
  */
 #ifdef TOPPERS_sta_ovr
 
@@ -194,7 +194,7 @@ sta_ovr(ID tskid, OVRTIM ovrtim)
 #endif /* TOPPERS_sta_ovr */
 
 /*
- *  オーバランハンドラの動作開始（非タスクコンテキスト用）
+ *  �I�[�o�����n���h���̓���J�n�i��^�X�N�R���e�L�X�g�p�j
  */
 #ifdef TOPPERS_ista_ovr
 
@@ -224,7 +224,7 @@ ista_ovr(ID tskid, OVRTIM ovrtim)
 #endif /* TOPPERS_ista_ovr */
 
 /*
- *  オーバランハンドラの動作停止
+ *  �I�[�o�����n���h���̓����~
  */
 #ifdef TOPPERS_stp_ovr
 
@@ -259,7 +259,7 @@ stp_ovr(ID tskid)
 #endif /* TOPPERS_stp_ovr */
 
 /*
- *  オーバランハンドラの動作停止（非タスクコンテキスト用）
+ *  �I�[�o�����n���h���̓����~�i��^�X�N�R���e�L�X�g�p�j
  */
 #ifdef TOPPERS_istp_ovr
 
@@ -288,7 +288,7 @@ istp_ovr(ID tskid)
 #endif /* TOPPERS_istp_ovr */
 
 /*
- *  オーバランハンドラの状態参照
+ *  �I�[�o�����n���h���̏�ԎQ��
  */
 #ifdef TOPPERS_ref_ovr
 
@@ -328,11 +328,11 @@ ref_ovr(ID tskid, T_ROVR *pk_rovr)
 #endif /* TOPPERS_ref_ovr */
 
 /*
- *  オーバランハンドラ起動ルーチン
+ *  �I�[�o�����n���h���N�����[�`��
  *
- *  オーバランハンドラの呼出し後に，呼出し前の状態（CPUロックフラグ，割
- *  込み優先度マスク）に戻さないのは，このルーチンからのリターン後に，
- *  割込み出口処理で元の状態に戻すためである．
+ *  �I�[�o�����n���h���̌ďo����ɁC�ďo���O�̏�ԁiCPU���b�N�t���O�C��
+ *  ���ݗD��x�}�X�N�j�ɖ߂��Ȃ��̂́C���̃��[�`������̃��^�[����ɁC
+ *  �����ݏo�������Ō��̏�Ԃɖ߂����߂ł���D
  */
 #ifdef TOPPERS_ovrcal
 
@@ -354,8 +354,8 @@ call_ovrhdr(void)
 	}
 	else {
 		/*
-		 *  このルーチンが呼び出される前に，オーバランハンドラの起動が
-		 *  キャンセルされた場合
+		 *  ���̃��[�`�����Ăяo�����O�ɁC�I�[�o�����n���h���̋N����
+		 *  �L�����Z�����ꂽ�ꍇ
 		 */
 		i_unlock_cpu();
 	}

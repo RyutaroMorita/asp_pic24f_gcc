@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2014 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
- *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
- *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
- *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
- *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
- *      スコード中に含まれていること．
- *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
- *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
- *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
- *      の無保証規定を掲載すること．
- *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
- *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
- *      と．
- *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
- *        作権表示，この利用条件および下記の無保証規定を掲載すること．
- *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
- *        報告すること．
- *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
- *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
- *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
- *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
- *      免責すること．
+ *  ��L���쌠�҂́C�ȉ���(1)�`(4)�̏����𖞂����ꍇ�Ɍ���C�{�\�t�g�E�F
+ *  �A�i�{�\�t�g�E�F�A�����ς������̂��܂ށD�ȉ������j���g�p�E�����E��
+ *  �ρE�Ĕz�z�i�ȉ��C���p�ƌĂԁj���邱�Ƃ𖳏��ŋ�������D
+ *  (1) �{�\�t�g�E�F�A���\�[�X�R�[�h�̌`�ŗ��p����ꍇ�ɂ́C��L�̒���
+ *      ���\���C���̗��p��������щ��L�̖��ۏ؋K�肪�C���̂܂܂̌`�Ń\�[
+ *      �X�R�[�h���Ɋ܂܂�Ă��邱�ƁD
+ *  (2) �{�\�t�g�E�F�A���C���C�u�����`���ȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł���`�ōĔz�z����ꍇ�ɂ́C�Ĕz�z�ɔ����h�L�������g�i���p
+ *      �҃}�j���A���Ȃǁj�ɁC��L�̒��쌠�\���C���̗��p��������щ��L
+ *      �̖��ۏ؋K����f�ڂ��邱�ƁD
+ *  (3) �{�\�t�g�E�F�A���C�@��ɑg�ݍ��ނȂǁC���̃\�t�g�E�F�A�J���Ɏg
+ *      �p�ł��Ȃ��`�ōĔz�z����ꍇ�ɂ́C���̂����ꂩ�̏����𖞂�����
+ *      �ƁD
+ *    (a) �Ĕz�z�ɔ����h�L�������g�i���p�҃}�j���A���Ȃǁj�ɁC��L�̒�
+ *        �쌠�\���C���̗��p��������щ��L�̖��ۏ؋K����f�ڂ��邱�ƁD
+ *    (b) �Ĕz�z�̌`�Ԃ��C�ʂɒ�߂���@�ɂ���āCTOPPERS�v���W�F�N�g��
+ *        �񍐂��邱�ƁD
+ *  (4) �{�\�t�g�E�F�A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����邢���Ȃ鑹
+ *      �Q������C��L���쌠�҂����TOPPERS�v���W�F�N�g��Ɛӂ��邱�ƁD
+ *      �܂��C�{�\�t�g�E�F�A�̃��[�U�܂��̓G���h���[�U����̂����Ȃ闝
+ *      �R�Ɋ�Â�����������C��L���쌠�҂����TOPPERS�v���W�F�N�g��
+ *      �Ɛӂ��邱�ƁD
  * 
- *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
- *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
- *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
- *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
- *  の責任を負わない．
+ *  �{�\�t�g�E�F�A�́C���ۏ؂Œ񋟂���Ă�����̂ł���D��L���쌠�҂�
+ *  ���TOPPERS�v���W�F�N�g�́C�{�\�t�g�E�F�A�Ɋւ��āC����̎g�p�ړI
+ *  �ɑ΂���K�������܂߂āC�����Ȃ�ۏ؂��s��Ȃ��D�܂��C�{�\�t�g�E�F
+ *  �A�̗��p�ɂ�蒼�ړI�܂��͊ԐړI�ɐ����������Ȃ鑹�Q�Ɋւ��Ă��C��
+ *  �̐ӔC�𕉂�Ȃ��D
  * 
  *  $Id: wait.h 2728 2015-12-30 01:46:11Z ertl-honda $
  */
 
 /*
- *		待ち状態管理モジュール
+ *		�҂���ԊǗ����W���[��
  */
 
 #ifndef TOPPERS_WAIT_H
@@ -51,10 +51,10 @@
 #include "time_event.h"
 
 /*
- *  タスクの優先度順の待ちキューへの挿入
+ *  �^�X�N�̗D��x���̑҂��L���[�ւ̑}��
  *
- *  p_tcbで指定されるタスクを，タスク優先度順のキューp_queueに挿入する．
- *  キューの中に同じ優先度のタスクがある場合には，その最後に挿入する．
+ *  p_tcb�Ŏw�肳���^�X�N���C�^�X�N�D��x���̃L���[p_queue�ɑ}������D
+ *  �L���[�̒��ɓ����D��x�̃^�X�N������ꍇ�ɂ́C���̍Ō�ɑ}������D
  */
 Inline void
 queue_insert_tpri(QUEUE *p_queue, TCB *p_tcb)
@@ -72,11 +72,11 @@ queue_insert_tpri(QUEUE *p_queue, TCB *p_tcb)
 }
 
 /*
- *  待ち状態への遷移
+ *  �҂���Ԃւ̑J��
  *
- *  実行中のタスクを待ち状態に遷移させる．具体的には，実行中のタスクを
- *  レディキューから削除し，TCBのp_winfoフィールド，WINFOのp_tmevtbフィー
- *  ルドを設定する．
+ *  ���s���̃^�X�N��҂���ԂɑJ�ڂ�����D��̓I�ɂ́C���s���̃^�X�N��
+ *  ���f�B�L���[����폜���CTCB��p_winfo�t�B�[���h�CWINFO��p_tmevtb�t�B�[
+ *  ���h��ݒ肷��D
  */
 Inline void
 make_wait(WINFO *p_winfo)
@@ -87,21 +87,21 @@ make_wait(WINFO *p_winfo)
 }
 
 /*
- *  待ち状態への遷移（タイムアウト指定）
+ *  �҂���Ԃւ̑J�ځi�^�C���A�E�g�w��j
  *
- *  実行中のタスクを，タイムアウト指定付きで待ち状態に遷移させる．具体
- *  的には，実行中のタスクをレディキューから削除し，TCBのp_winfoフィー
- *  ルド，WINFOのp_tmevtbフィールドを設定する．また，タイムイベントブ
- *  ロックを登録する．
+ *  ���s���̃^�X�N���C�^�C���A�E�g�w��t���ő҂���ԂɑJ�ڂ�����D���
+ *  �I�ɂ́C���s���̃^�X�N�����f�B�L���[����폜���CTCB��p_winfo�t�B�[
+ *  ���h�CWINFO��p_tmevtb�t�B�[���h��ݒ肷��D�܂��C�^�C���C�x���g�u
+ *  ���b�N��o�^����D
  */
 extern void	make_wait_tmout(WINFO *p_winfo, TMEVTB *p_tmevtb, TMO tmout);
 
 /*
- *  待ち解除のためのタスク状態の更新
+ *  �҂������̂��߂̃^�X�N��Ԃ̍X�V
  *
- *  p_tcbで指定されるタスクを，待ち解除するようタスク状態を更新する．
- *  待ち解除するタスクが実行できる状態になる場合は，レディキューにつな
- *  ぐ．また，ディスパッチが必要な場合にはtrueを返す．
+ *  p_tcb�Ŏw�肳���^�X�N���C�҂���������悤�^�X�N��Ԃ��X�V����D
+ *  �҂���������^�X�N�����s�ł����ԂɂȂ�ꍇ�́C���f�B�L���[�ɂ�
+ *  ���D�܂��C�f�B�X�p�b�`���K�v�ȏꍇ�ɂ�true��Ԃ��D
  */
 Inline bool_t
 make_non_wait(TCB *p_tcb)
@@ -110,7 +110,7 @@ make_non_wait(TCB *p_tcb)
 
 	if (!TSTAT_SUSPENDED(p_tcb->tstat)) {
 		/*
-		 *  待ち状態から実行できる状態への遷移
+		 *  �҂���Ԃ�����s�ł����Ԃւ̑J��
 		 */
 		p_tcb->tstat = TS_RUNNABLE;
 		LOG_TSKSTAT(p_tcb);
@@ -118,7 +118,7 @@ make_non_wait(TCB *p_tcb)
 	}
 	else {
 		/*
-		 *  二重待ち状態から強制待ち状態への遷移
+		 *  ��d�҂���Ԃ��狭���҂���Ԃւ̑J��
 		 */
 		p_tcb->tstat = TS_SUSPENDED;
 		LOG_TSKSTAT(p_tcb);
@@ -127,19 +127,19 @@ make_non_wait(TCB *p_tcb)
 }
 
 /*
- *  オブジェクト待ちキューからの削除
+ *  �I�u�W�F�N�g�҂��L���[����̍폜
  *
- *  p_tcbで指定されるタスクが，同期・通信オブジェクトの待ちキューにつ
- *  ながれていれば，待ちキューから削除する．ディスパッチが必要な場合に
- *  はtrueを返す．
+ *  p_tcb�Ŏw�肳���^�X�N���C�����E�ʐM�I�u�W�F�N�g�̑҂��L���[�ɂ�
+ *  �Ȃ���Ă���΁C�҂��L���[����폜����D�f�B�X�p�b�`���K�v�ȏꍇ��
+ *  ��true��Ԃ��D
  */
 extern bool_t	wait_dequeue_wobj(TCB *p_tcb);
 
 /*
- *  時間待ちのためのタイムイベントブロックの登録解除
+ *  ���ԑ҂��̂��߂̃^�C���C�x���g�u���b�N�̓o�^����
  *
- *  p_tcbで指定されるタスクに対して，時間待ちのためのタイムイベントブ
- *  ロックが登録されていれば，それを登録解除する．
+ *  p_tcb�Ŏw�肳���^�X�N�ɑ΂��āC���ԑ҂��̂��߂̃^�C���C�x���g�u
+ *  ���b�N���o�^����Ă���΁C�����o�^��������D
  */
 Inline void
 wait_dequeue_tmevtb(TCB *p_tcb)
@@ -150,49 +150,49 @@ wait_dequeue_tmevtb(TCB *p_tcb)
 }
 
 /*
- *  待ち解除
+ *  �҂�����
  *
- *  p_tcbで指定されるタスクの待ち状態を解除する．具体的には，タイムイ
- *  ベントブロックが登録されていれば，それを登録解除する．また，タスク
- *  状態を更新し，待ち解除したタスクからの返値をE_OKとする．待ちキュー
- *  からの削除は行わない．待ち解除したタスクへのディスパッチが必要な場
- *  合にはtrueを返す．
+ *  p_tcb�Ŏw�肳���^�X�N�̑҂���Ԃ���������D��̓I�ɂ́C�^�C���C
+ *  �x���g�u���b�N���o�^����Ă���΁C�����o�^��������D�܂��C�^�X�N
+ *  ��Ԃ��X�V���C�҂����������^�X�N����̕Ԓl��E_OK�Ƃ���D�҂��L���[
+ *  ����̍폜�͍s��Ȃ��D�҂����������^�X�N�ւ̃f�B�X�p�b�`���K�v�ȏ�
+ *  ���ɂ�true��Ԃ��D
  */
 extern bool_t	wait_complete(TCB *p_tcb);
 
 /*
- *  タイムアウトに伴う待ち解除
+ *  �^�C���A�E�g�ɔ����҂�����
  *
- *  p_tcbで指定されるタスクが，待ちキューにつながれていれば待ちキュー
- *  から削除し，タスク状態を更新する．また，待ち解除したタスクからの返
- *  値を，wait_tmoutではE_TMOUT，wait_tmout_okではE_OKとする．待ち解除
- *  したタスクへのディスパッチが必要な時は，reqflgをtrueにする．
+ *  p_tcb�Ŏw�肳���^�X�N���C�҂��L���[�ɂȂ���Ă���Α҂��L���[
+ *  ����폜���C�^�X�N��Ԃ��X�V����D�܂��C�҂����������^�X�N����̕�
+ *  �l���Cwait_tmout�ł�E_TMOUT�Cwait_tmout_ok�ł�E_OK�Ƃ���D�҂�����
+ *  �����^�X�N�ւ̃f�B�X�p�b�`���K�v�Ȏ��́Creqflg��true�ɂ���D
  *
- *  wait_tmout_okは，dly_tskで使うためのもので，待ちキューから削除する
- *  処理を行わない．
+ *  wait_tmout_ok�́Cdly_tsk�Ŏg�����߂̂��̂ŁC�҂��L���[����폜����
+ *  �������s��Ȃ��D
  *
- *  いずれの関数も，タイムイベントのコールバック関数として用いるための
- *  もので，割込みハンドラから呼び出されることを想定している．
+ *  ������̊֐����C�^�C���C�x���g�̃R�[���o�b�N�֐��Ƃ��ėp���邽�߂�
+ *  ���̂ŁC�����݃n���h������Ăяo����邱�Ƃ�z�肵�Ă���D
  */
 extern void	wait_tmout(TCB *p_tcb);
 extern void	wait_tmout_ok(TCB *p_tcb);
 
 /*
- *  待ち状態の強制解除
+ *  �҂���Ԃ̋�������
  *
- *  p_tcbで指定されるタスクの待ち状態を強制的に解除する．具体的には，
- *  タスクが待ちキューにつながれていれば待ちキューから削除し，タイムイ
- *  ベントブロックが登録されていればそれを登録解除する．また，タスクの
- *  状態を更新し，待ち解除したタスクからの返値をE_RLWAIとする．また，
- *  待ち解除したタスクへのディスパッチが必要な場合にはtrueを返す．
+ *  p_tcb�Ŏw�肳���^�X�N�̑҂���Ԃ������I�ɉ�������D��̓I�ɂ́C
+ *  �^�X�N���҂��L���[�ɂȂ���Ă���Α҂��L���[����폜���C�^�C���C
+ *  �x���g�u���b�N���o�^����Ă���΂����o�^��������D�܂��C�^�X�N��
+ *  ��Ԃ��X�V���C�҂����������^�X�N����̕Ԓl��E_RLWAI�Ƃ���D�܂��C
+ *  �҂����������^�X�N�ւ̃f�B�X�p�b�`���K�v�ȏꍇ�ɂ�true��Ԃ��D
  */
 extern bool_t	wait_release(TCB *p_tcb);
 
 /*
- *  待ちキューの先頭のタスクID
+ *  �҂��L���[�̐擪�̃^�X�NID
  *
- *  p_wait_queueで指定した待ちキューの先頭のタスクIDを返す．待ちキュー
- *  が空の場合には，TSK_NONEを返す．
+ *  p_wait_queue�Ŏw�肵���҂��L���[�̐擪�̃^�X�NID��Ԃ��D�҂��L���[
+ *  ����̏ꍇ�ɂ́CTSK_NONE��Ԃ��D
  */
 Inline ID
 wait_tskid(QUEUE *p_wait_queue)
@@ -206,71 +206,71 @@ wait_tskid(QUEUE *p_wait_queue)
 }
 
 /*
- *  同期・通信オブジェクトの管理ブロックの共通部分操作ルーチン
+ *  �����E�ʐM�I�u�W�F�N�g�̊Ǘ��u���b�N�̋��ʕ������샋�[�`��
  *
- *  同期・通信オブジェクトの初期化ブロックと管理ブロックの先頭部分は共
- *  通になっている．以下は，その共通部分を扱うための型およびルーチン群
- *  である．
+ *  �����E�ʐM�I�u�W�F�N�g�̏������u���b�N�ƊǗ��u���b�N�̐擪�����͋�
+ *  �ʂɂȂ��Ă���D�ȉ��́C���̋��ʕ������������߂̌^����у��[�`���Q
+ *  �ł���D
  *
- *  複数の待ちキューを持つ同期・通信オブジェクトの場合，先頭以外の待ち
- *  キューを操作する場合には，これらのルーチンは使えない．また，オブジェ
- *  クト属性のTA_TPRIビットを参照するので，このビットを他の目的に使って
- *  いる場合も，これらのルーチンは使えない．
+ *  �����̑҂��L���[���������E�ʐM�I�u�W�F�N�g�̏ꍇ�C�擪�ȊO�̑҂�
+ *  �L���[�𑀍삷��ꍇ�ɂ́C�����̃��[�`���͎g���Ȃ��D�܂��C�I�u�W�F
+ *  �N�g������TA_TPRI�r�b�g���Q�Ƃ���̂ŁC���̃r�b�g�𑼂̖ړI�Ɏg����
+ *  ����ꍇ���C�����̃��[�`���͎g���Ȃ��D
  */
 
 /*
- *  同期・通信オブジェクトの初期化ブロックの共通部分
+ *  �����E�ʐM�I�u�W�F�N�g�̏������u���b�N�̋��ʕ���
  */
 typedef struct wait_object_initialization_block {
-	ATR			wobjatr;		/* オブジェクト属性 */
+	ATR			wobjatr;		/* �I�u�W�F�N�g���� */
 } WOBJINIB;
 
 /*
- *  同期・通信オブジェクトの管理ブロックの共通部分
+ *  �����E�ʐM�I�u�W�F�N�g�̊Ǘ��u���b�N�̋��ʕ���
  */
 typedef struct wait_object_control_block {
-	QUEUE		wait_queue;		/* 待ちキュー */
-	const WOBJINIB *p_wobjinib;	/* 初期化ブロックへのポインタ */
+	QUEUE		wait_queue;		/* �҂��L���[ */
+	const WOBJINIB *p_wobjinib;	/* �������u���b�N�ւ̃|�C���^ */
 } WOBJCB;
 
 /*
- *  同期・通信オブジェクトの待ち情報ブロックの共通部分
+ *  �����E�ʐM�I�u�W�F�N�g�̑҂����u���b�N�̋��ʕ���
  *
- *  この構造体は，待ち情報ブロック（WINFO）を拡張（オブジェクト指向言
- *  語の継承に相当）したものであるが，WINFOが共用体で定義されているた
- *  めに，1つのフィールドとして含めている．
+ *  ���̍\���̂́C�҂����u���b�N�iWINFO�j���g���i�I�u�W�F�N�g�w����
+ *  ��̌p���ɑ����j�������̂ł��邪�CWINFO�����p�̂Œ�`����Ă��邽
+ *  �߂ɁC1�̃t�B�[���h�Ƃ��Ċ܂߂Ă���D
  */
 typedef struct wait_object_waiting_information {
-	WINFO	winfo;			/* 標準の待ち情報ブロック */
-	WOBJCB	*p_wobjcb;		/* 待ちオブジェクトの管理ブロック */
+	WINFO	winfo;			/* �W���̑҂����u���b�N */
+	WOBJCB	*p_wobjcb;		/* �҂��I�u�W�F�N�g�̊Ǘ��u���b�N */
 } WINFO_WOBJ;
 
 /*
- *  同期・通信オブジェクトに対する待ち状態への遷移
+ *  �����E�ʐM�I�u�W�F�N�g�ɑ΂���҂���Ԃւ̑J��
  *  
- *  実行中のタスクを待ち状態に遷移させ，同期・通信オブジェクトの待ちキュー
- *  につなぐ．また，待ち情報ブロック（WINFO）のp_wobjcbを設定する．
- *  wobj_make_wait_tmoutは，タイムイベントブロックの登録も行う．
+ *  ���s���̃^�X�N��҂���ԂɑJ�ڂ����C�����E�ʐM�I�u�W�F�N�g�̑҂��L���[
+ *  �ɂȂ��D�܂��C�҂����u���b�N�iWINFO�j��p_wobjcb��ݒ肷��D
+ *  wobj_make_wait_tmout�́C�^�C���C�x���g�u���b�N�̓o�^���s���D
  */
 extern void	wobj_make_wait(WOBJCB *p_wobjcb, WINFO_WOBJ *p_winfo);
 extern void	wobj_make_wait_tmout(WOBJCB *p_wobjcb, WINFO_WOBJ *p_winfo,
 											TMEVTB *p_tmevtb, TMO tmout);
 
 /*
- *  タスク優先度変更時の処理
+ *  �^�X�N�D��x�ύX���̏���
  *
- *  同期・通信オブジェクトに対する待ち状態にあるタスクの優先度が変更さ
- *  れた場合に，待ちキューの中でのタスクの位置を修正する．ディスパッチ
- *  が必要な場合にはtrueを返す．
+ *  �����E�ʐM�I�u�W�F�N�g�ɑ΂���҂���Ԃɂ���^�X�N�̗D��x���ύX��
+ *  �ꂽ�ꍇ�ɁC�҂��L���[�̒��ł̃^�X�N�̈ʒu���C������D�f�B�X�p�b�`
+ *  ���K�v�ȏꍇ�ɂ�true��Ԃ��D
  */
 extern bool_t	wobj_change_priority(WOBJCB *p_wobjcb, TCB *p_tcb);
 
 /*
- *  待ちキューの初期化
+ *  �҂��L���[�̏�����
  *
- *  待ちキューにつながれているタスクをすべて待ち解除する．待ち解除した
- *  タスクからの返値は，E_DLTとする．待ち解除したタスクへのディスパッチ
- *  が必要な場合はtrue，そうでない場合はfalseを返す．
+ *  �҂��L���[�ɂȂ���Ă���^�X�N�����ׂđ҂���������D�҂���������
+ *  �^�X�N����̕Ԓl�́CE_DLT�Ƃ���D�҂����������^�X�N�ւ̃f�B�X�p�b�`
+ *  ���K�v�ȏꍇ��true�C�����łȂ��ꍇ��false��Ԃ��D
  */
 extern bool_t	init_wait_queue(QUEUE *p_wait_queue);
 
