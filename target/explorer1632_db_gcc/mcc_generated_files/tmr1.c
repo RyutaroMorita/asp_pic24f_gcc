@@ -1,6 +1,6 @@
 
 /**
-  TMR1 Generated Driver API Source File
+  TMR1 Generated Driver API Source File 
 
   @Company
     Microchip Technology Inc.
@@ -12,13 +12,13 @@
     This is the generated source file for the TMR1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description
-    This source file provides APIs for driver for TMR1.
-    Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.169.0
+    This source file provides APIs for driver for TMR1. 
+    Generation Information : 
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
         Device            :  PIC24FJ1024GB610
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.50
-        MPLAB             :  MPLAB X v5.40
+        Compiler          :  XC16 v2.10
+        MPLAB             :  MPLAB X v6.05
 */
 
 /*
@@ -90,11 +90,11 @@ static TMR_OBJ tmr1_obj;
 
 void TMR1_Initialize (void)
 {
-    //TMR1 0;
+    //TMR1 0; 
     TMR1 = 0x00;
-    //Period = 0.01 s; Frequency = 16000000 Hz; PR1 19999;
+    //Period = 0.01 s; Frequency = 16000000 Hz; PR1 19999; 
     PR1 = 0x4E1F;
-    //TCKPS 1:8; TON enabled; TSIDL disabled; TCS FOSC/2; TECS SOSC; TSYNC disabled; TGATE disabled;
+    //TCKPS 1:8; TON enabled; TSIDL disabled; TCS FOSC/2; TECS SOSC; TSYNC disabled; TGATE disabled; 
     T1CON = 0x8010;
 
     if(TMR1_InterruptHandler == NULL)
@@ -104,14 +104,13 @@ void TMR1_Initialize (void)
 
     IFS0bits.T1IF = false;
     IEC0bits.T1IE = true;
-
+	
     tmr1_obj.timerElapsed = false;
 
 }
 
 
-//void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
-void T1Interrupt()
+void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
 {
     /* Check if the Timer Interrupt/Status is set */
 
@@ -119,9 +118,9 @@ void T1Interrupt()
 
     // ticker function call;
     // ticker is 1 -> Callback function gets called everytime this ISR executes
-    if(TMR1_InterruptHandler)
-    {
-           TMR1_InterruptHandler();
+    if(TMR1_InterruptHandler) 
+    { 
+           TMR1_InterruptHandler(); 
     }
 
     //***User Area End
@@ -164,9 +163,9 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
 }
 
 void  TMR1_SetInterruptHandler(void (* InterruptHandler)(void))
-{
+{ 
     IEC0bits.T1IE = false;
-    TMR1_InterruptHandler = InterruptHandler;
+    TMR1_InterruptHandler = InterruptHandler; 
     IEC0bits.T1IE = true;
 }
 
@@ -194,7 +193,7 @@ void TMR1_Stop( void )
 bool TMR1_GetElapsedThenClear(void)
 {
     bool status;
-
+    
     status = tmr1_obj.timerElapsed;
 
     if(status == true)
@@ -211,7 +210,7 @@ int TMR1_SoftwareCounterGet(void)
 
 void TMR1_SoftwareCounterClear(void)
 {
-    tmr1_obj.count = 0;
+    tmr1_obj.count = 0; 
 }
 
 /**

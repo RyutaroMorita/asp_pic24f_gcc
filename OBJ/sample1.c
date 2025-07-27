@@ -281,7 +281,6 @@ void alarm_handler(intptr_t exinf)
 /*
  *  メインタスク
  */
-bool_t debug = false;
 void main_task(intptr_t exinf)
 {
 	char	c;
@@ -298,7 +297,6 @@ void main_task(intptr_t exinf)
 #endif /* TOPPERS_SUPPORT_GET_UTM */
 
 	SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
-    debug = !debug;
 	syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
 
 	/*

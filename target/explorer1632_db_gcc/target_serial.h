@@ -57,7 +57,7 @@
 #define INTNO_SIO_RX	INT_U1RX		/* Š„‚İ”Ô† */
 #define INTNO_SIO_TX	INT_U1TX		/* Š„‚İ”Ô† */
 #define INTNO_SIO_ER	INT_U1E			/* Š„‚İ”Ô† */
-#define INTPRI_SIO		-6				/* Š„‚İ—Dæ“x */
+#define INTPRI_SIO		-3				/* Š„‚İ—Dæ“x */
 #define INTATR_SIO		TA_NULL			/* Š„‚İ‘®« */
 
 #define SERIAL_RCV_BUFSZ1	(64)

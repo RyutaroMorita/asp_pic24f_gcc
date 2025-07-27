@@ -51,7 +51,7 @@
 #include "xc.h"
 #include "mcc_generated_files/uart1.h"
 
-extern void U1ErrInterrupt();
+extern void _U1ErrInterrupt();
 
 #define UART1_BASE		0x0398U
 
@@ -145,7 +145,7 @@ sio_isr_tx(intptr_t exinf)
 void
 sio_isr_er(intptr_t exinf)
 {
-	U1ErrInterrupt();
+	_U1ErrInterrupt();
 }
 
 /*

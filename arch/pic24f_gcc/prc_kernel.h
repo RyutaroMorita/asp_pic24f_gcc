@@ -63,7 +63,7 @@
  *  NMI以外にカーネル管理外の割込みを設けないことになる．
  */
 #ifndef TMIN_INTPRI
-#define TMIN_INTPRI		(-6)		/* 割込み優先度の最小値（最高値）*/
+#define TMIN_INTPRI		(-7)		/* 割込み優先度の最小値（最高値）*/
 #endif /* TMIN_INTPRI */
 #define TMAX_INTPRI		(-1)		/* 割込み優先度の最大値（最低値） */
 

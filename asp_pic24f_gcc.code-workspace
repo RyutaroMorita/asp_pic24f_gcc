@@ -10,7 +10,8 @@
 		"files.associations": {
 			"prc_test.h": "c",
 			"uart1.h": "c",
-			"system.h": "c"
+			"system.h": "c",
+			"tmr1.h": "c"
 		}
 	}
 }

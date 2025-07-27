@@ -48,7 +48,7 @@
 #include "target_timer.h"
 #include "mcc_generated_files/tmr1.h"
 
-extern void T1Interrupt();
+extern void _T1Interrupt();
 
 /*
  *  タイマの起動処理
@@ -89,7 +89,7 @@ void __attribute__ ((section(".isr.text")) )
 target_timer_handler(void)
 {
 	i_begin_int(INTNO_TIMER);
-	T1Interrupt();
+	_T1Interrupt();
 	signal_time();					/* タイムティックの供給 */
 	i_end_int(INTNO_TIMER);
 }

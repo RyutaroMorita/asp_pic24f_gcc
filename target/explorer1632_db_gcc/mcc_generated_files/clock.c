@@ -13,11 +13,11 @@
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.169.0
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
         Device            :  PIC24FJ1024GB610
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.50
-        MPLAB             :  MPLAB X v5.40
+        Compiler          :  XC16 v2.10
+        MPLAB             :  MPLAB X v6.05
 */
 
 /*
@@ -72,7 +72,7 @@ void CLOCK_Initialize(void)
     PMD3 = 0x00;
     // U4MD enabled; USB1MD enabled; CTMUMD enabled; REFOMD enabled; LVDMD enabled; 
     PMD4 = 0x00;
-    // IC9MD enabled; OC9MD enabled; 
+    // CCP2MD enabled; CCP1MD enabled; CCP4MD enabled; CCP3MD enabled; CCP7MD enabled; CCP5MD enabled; CCP6MD enabled; 
     PMD5 = 0x00;
     // SPI3MD enabled; 
     PMD6 = 0x00;
@@ -80,10 +80,9 @@ void CLOCK_Initialize(void)
     PMD7 = 0x00;
     // U5MD enabled; CLC3MD enabled; CLC4MD enabled; CLC1MD enabled; CLC2MD enabled; U6MD enabled; 
     PMD8 = 0x00;
-    // CF no clock failure; NOSC PRIPLL; SOSCEN enabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Switch is Complete; IOLOCK not-active; 
+    // CF no clock failure; NOSC PRIPLL; SOSCEN enabled; POSCEN disabled; CLKLOCK unlocked; OSWEN Request Switch; IOLOCK not-active; 
     __builtin_write_OSCCONH((uint8_t) (0x03));
     __builtin_write_OSCCONL((uint8_t) (0x03));
     // Wait for Clock switch to occur
     while (OSCCONbits.OSWEN != 0);
-    while (OSCCONbits.LOCK != 1);
 }
