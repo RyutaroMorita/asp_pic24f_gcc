@@ -5,13 +5,7 @@
 		}
 	],
 	"settings": {
-		"terminal.integrated.defaultProfile.windows": "Cygwin",
 		"files.encoding": "shiftjis",
-		"files.associations": {
-			"prc_test.h": "c",
-			"uart1.h": "c",
-			"system.h": "c",
-			"tmr1.h": "c"
-		}
+		"terminal.integrated.defaultProfile.windows": "Cygwin"
 	}
 }
