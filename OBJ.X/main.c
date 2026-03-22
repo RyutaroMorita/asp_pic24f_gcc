@@ -1,19 +1,17 @@
 /**
-  PIN MANAGER Generated Driver File
+  Generated main.c file from MPLAB Code Configurator
 
-  @Company:
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    pin_manager.h
+  @File Name
+    main.c
 
-  @Summary:
-    This is the generated manager file for the PIC24 / dsPIC33 / PIC32MM MCUs device.  This manager
-    configures the pins direction, initial state, analog setting.
-    The peripheral pin select, PPS, configuration is also handled by this manager.
+  @Summary
+    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
 
-  @Description:
-    This source file provides implementations for PIN MANAGER.
+  @Description
+    This source file provides main entry point for system initialization and application code development.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24FJ1024GB610
@@ -44,51 +42,27 @@
     TERMS.
 */
 
-#ifndef _PIN_MANAGER_H
-#define _PIN_MANAGER_H
 /**
-    Section: Includes
+  Section: Included Files
 */
-#include <xc.h>
+#include "mcc_generated_files/system.h"
 
-/**
-    Section: Device Pin Macros
-*/
+/*
+                         Main application
+ */
+int main(void)
+{
+    // initialize the device
+    SYSTEM_Initialize();
 
-/**
-    Section: Function Prototypes
-*/
-/**
-  @Summary
-    Configures the pin settings of the PIC24FJ1024GB610
-    The peripheral pin select, PPS, configuration is also handled by this manager.
-
-  @Description
-    This is the generated manager file for the PIC24 / dsPIC33 / PIC32MM MCUs device.  This manager
-    configures the pins direction, initial state, analog setting.
-    The peripheral pin select, PPS, configuration is also handled by this manager.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    void SYSTEM_Initialize(void)
+    while (1)
     {
-        // Other initializers are called from this function
-        PIN_MANAGER_Initialize();
+        // Add your application code
     }
-    </code>
 
+    return 1;
+}
+/**
+ End of File
 */
-void PIN_MANAGER_Initialize (void);
 
-
-
-#endif

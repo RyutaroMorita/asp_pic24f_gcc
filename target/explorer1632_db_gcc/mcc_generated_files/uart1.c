@@ -13,7 +13,7 @@
   @Description
     This source file provides APIs for driver for UART1. 
     Generation Information : 
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24FJ1024GB610
     The generated drivers are tested against the following:
         Compiler          :  XC16 v2.10
@@ -198,8 +198,6 @@ void UART1_SetRxInterruptHandler(void (* interruptHandler)(void))
 
 void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1RXInterrupt( void )
 {
-    (*UART1_RxDefaultInterruptHandler)();
-
     IFS0bits.U1RXIF = 0;
 	
     while((U1STAbits.URXDA == 1))
@@ -224,6 +222,7 @@ void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1RXInterrupt( void )
             rxOverflowed = true;
         }
     }
+    (*UART1_RxDefaultInterruptHandler)();
 }
 
 void __attribute__ ((weak)) UART1_Receive_CallBack(void)
